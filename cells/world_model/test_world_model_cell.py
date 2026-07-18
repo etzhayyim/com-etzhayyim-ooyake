@@ -1,8 +1,8 @@
 """Tests for ooyake WorldModelCell — cross-actor world-model reconcile
 (ADR-2606021600 §3, depends ADR-2606011000 + ADR-2606011800).
 
-Run: python3 -m pytest 20-actors/ooyake/cells/world_model/test_world_model_cell.py
- or: python3 20-actors/ooyake/cells/world_model/test_world_model_cell.py  (self-run)
+Run: python3 -m pytest cells/world_model/test_world_model_cell.py
+ or: python3 cells/world_model/test_world_model_cell.py  (self-run)
 """
 
 from __future__ import annotations

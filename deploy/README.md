@@ -7,7 +7,7 @@ atlas (`gov-atlas-v1`). Per ADR-2606021600. All are **read-side / operator-local
 Run the full offline test suite:
 
 ```bash
-bash 20-actors/ooyake/deploy/run_tests.sh      # 8 suites, no network/deploy → ALL GREEN
+bash deploy/run_tests.sh      # 8 suites, no network/deploy → ALL GREEN
 ```
 
 ## Scripts

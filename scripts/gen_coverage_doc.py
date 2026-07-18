@@ -104,12 +104,13 @@ def main() -> int:
         linked = [p for p in procedures if p.get(":gov.procedure/toritsugi-ref")]
         # cross-actor link resolution (read-only; degrade gracefully if file absent)
         resolved = "—"
-        tor_path = os.path.normpath(
-            os.path.join(_HERE, "..", "..", "toritsugi", "registry", "procedures.seed.json")
+        tor_root = os.environ.get(
+            "ETZHAYYIM_TORITSUGI_ROOT",
+            os.path.join(_HERE, "..", "..", "..", "com-etzhayyim-toritsugi"),
         )
+        tor_path = os.path.join(tor_root, "registry", "procedures.seed.edn")
         try:
-            import json
-            tids = {p["procedureId"] for p in json.load(open(tor_path, encoding="utf-8"))["procedures"]}
+            tids = {p["procedureId"] for p in parse_edn(open(tor_path, encoding="utf-8").read())["procedures"]}
             resolved = sum(1 for p in linked if p.get(":gov.procedure/toritsugi-ref") in tids)
         except Exception:
             pass

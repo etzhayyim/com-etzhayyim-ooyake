@@ -5,8 +5,8 @@ class of bug it exists to catch — the 2026-06-03 QID-fabrication finding (dupl
 QIDs, malformed QIDs, missing G5 provenance, bad enum, dangling address, circular
 authority).
 
-Run: python3 -m pytest 20-actors/ooyake/cells/reconcile/test_seed_integrity.py
- or: python3 20-actors/ooyake/cells/reconcile/test_seed_integrity.py
+Run: python3 -m pytest cells/reconcile/test_seed_integrity.py
+ or: python3 cells/reconcile/test_seed_integrity.py
 """
 from __future__ import annotations
 

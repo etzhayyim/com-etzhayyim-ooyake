@@ -32,7 +32,7 @@ JP = os.path.join(_REPO, "60-apps", "etzhayyim-project-states", "data", "gov", "
 GOV_GRAPH = "gov-atlas-v1"
 NSID_INGEST = "com.etzhayyim.apps.kotobase.kg.ingest_batch"
 LAST_VERIFIED = "2026-06-02"
-ATTESTATION = "20-actors/ooyake/BOOTSTRAP-ATTESTATION-reconcile-live.md (Seat 1 Lv7, 2026-06-02; re-ratify at Council 3-of-5)"
+ATTESTATION = "BOOTSTRAP-ATTESTATION-reconcile-live.md (Seat 1 Lv7, 2026-06-02; re-ratify at Council 3-of-5)"
 WARD_TYPES = {"special-ward", "ward"}
 
 
@@ -55,7 +55,7 @@ def _promotion_claims(extra):
 
 def _entity(uid, label_en, label_local, claims):
     out = {"id": uid, "type": "gov.unit", "labelEn": label_en, "claims": claims, "relations": [],
-           "extractor": "20-actors/ooyake/deploy/promote_authoritative.py",
+           "extractor": "deploy/promote_authoritative.py",
            "license": "Apache-2.0 + etzhayyim Charter Rider v2.0"}
     if label_local:
         out["labelJa"] = label_local

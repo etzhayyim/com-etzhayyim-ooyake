@@ -4789,6 +4789,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Hokkaidō"
+   :gov.unit/name-local "北海道"
    :gov.unit/official-url "https://www.pref.hokkaido.lg.jp/"
    :gov.unit/wikidata "Q1037393"
    :gov.unit/external-code ["iso3166-2:JP-01"]
@@ -4802,6 +4803,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kyoto Prefecture"
+   :gov.unit/name-local "京都府"
    :gov.unit/official-url "https://www.pref.kyoto.jp/"
    :gov.unit/wikidata "Q120730"
    :gov.unit/external-code ["iso3166-2:JP-26"]
@@ -4815,6 +4817,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Osaka Prefecture"
+   :gov.unit/name-local "大阪府"
    :gov.unit/official-url "https://www.pref.osaka.lg.jp/"
    :gov.unit/wikidata "Q122723"
    :gov.unit/external-code ["iso3166-2:JP-27"]
@@ -4828,6 +4831,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Fukuoka Prefecture"
+   :gov.unit/name-local "福岡県"
    :gov.unit/official-url "https://www.pref.fukuoka.lg.jp/"
    :gov.unit/wikidata "Q123258"
    :gov.unit/external-code ["iso3166-2:JP-40"]
@@ -4841,6 +4845,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Ehime Prefecture"
+   :gov.unit/name-local "愛媛県"
    :gov.unit/official-url "https://www.pref.ehime.jp"
    :gov.unit/wikidata "Q123376"
    :gov.unit/external-code ["iso3166-2:JP-38"]
@@ -4854,6 +4859,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Yamagata Prefecture"
+   :gov.unit/name-local "山形県"
    :gov.unit/official-url "https://www.pref.yamagata.jp/"
    :gov.unit/wikidata "Q125863"
    :gov.unit/external-code ["iso3166-2:JP-06"]
@@ -4867,6 +4873,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Yamaguchi Prefecture"
+   :gov.unit/name-local "山口県"
    :gov.unit/official-url "https://www.pref.yamaguchi.lg.jp/"
    :gov.unit/wikidata "Q127264"
    :gov.unit/external-code ["iso3166-2:JP-35"]
@@ -4880,6 +4887,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kanagawa Prefecture"
+   :gov.unit/name-local "神奈川県"
    :gov.unit/official-url "https://www.pref.kanagawa.jp/"
    :gov.unit/wikidata "Q127513"
    :gov.unit/external-code ["iso3166-2:JP-14"]
@@ -4893,6 +4901,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Nagano Prefecture"
+   :gov.unit/name-local "長野県"
    :gov.unit/official-url "https://www.pref.nagano.lg.jp/"
    :gov.unit/wikidata "Q127877"
    :gov.unit/external-code ["iso3166-2:JP-20"]
@@ -4906,6 +4915,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Saitama Prefecture"
+   :gov.unit/name-local "埼玉県"
    :gov.unit/official-url "https://www.pref.saitama.lg.jp/"
    :gov.unit/wikidata "Q128186"
    :gov.unit/external-code ["iso3166-2:JP-11"]
@@ -4919,6 +4929,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Mie Prefecture"
+   :gov.unit/name-local "三重県"
    :gov.unit/official-url "https://www.pref.mie.lg.jp/"
    :gov.unit/wikidata "Q128196"
    :gov.unit/external-code ["iso3166-2:JP-24"]
@@ -4932,6 +4943,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Gunma Prefecture"
+   :gov.unit/name-local "群馬県"
    :gov.unit/official-url "https://www.pref.gunma.jp/"
    :gov.unit/wikidata "Q129499"
    :gov.unit/external-code ["iso3166-2:JP-10"]
@@ -4945,6 +4957,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Hyōgo Prefecture"
+   :gov.unit/name-local "兵庫県"
    :gov.unit/official-url "https://web.pref.hyogo.lg.jp/"
    :gov.unit/wikidata "Q130290"
    :gov.unit/external-code ["iso3166-2:JP-28"]
@@ -4958,6 +4971,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Miyazaki Prefecture"
+   :gov.unit/name-local "宮崎県"
    :gov.unit/official-url "https://www.pref.miyazaki.lg.jp/"
    :gov.unit/wikidata "Q130300"
    :gov.unit/external-code ["iso3166-2:JP-45"]
@@ -4971,6 +4985,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kumamoto Prefecture"
+   :gov.unit/name-local "熊本県"
    :gov.unit/official-url "https://www.pref.kumamoto.jp/"
    :gov.unit/wikidata "Q130308"
    :gov.unit/external-code ["iso3166-2:JP-43"]
@@ -4984,6 +4999,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Gifu Prefecture"
+   :gov.unit/name-local "岐阜県"
    :gov.unit/official-url "https://www.pref.gifu.lg.jp/"
    :gov.unit/wikidata "Q131277"
    :gov.unit/external-code ["iso3166-2:JP-21"]
@@ -4997,6 +5013,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Ishikawa Prefecture"
+   :gov.unit/name-local "石川県"
    :gov.unit/official-url "https://www.pref.ishikawa.lg.jp/"
    :gov.unit/wikidata "Q131281"
    :gov.unit/external-code ["iso3166-2:JP-17"]
@@ -5010,6 +5027,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Nara Prefecture"
+   :gov.unit/name-local "奈良県"
    :gov.unit/official-url "https://www.pref.nara.jp/"
    :gov.unit/wikidata "Q131287"
    :gov.unit/external-code ["iso3166-2:JP-29"]
@@ -5023,6 +5041,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Wakayama Prefecture"
+   :gov.unit/name-local "和歌山県"
    :gov.unit/official-url "https://www.pref.wakayama.lg.jp/"
    :gov.unit/wikidata "Q131314"
    :gov.unit/external-code ["iso3166-2:JP-30"]
@@ -5036,6 +5055,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Shizuoka Prefecture"
+   :gov.unit/name-local "静岡県"
    :gov.unit/official-url "https://www.pref.shizuoka.jp"
    :gov.unit/wikidata "Q131320"
    :gov.unit/external-code ["iso3166-2:JP-22"]
@@ -5049,6 +5069,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Shiga Prefecture"
+   :gov.unit/name-local "滋賀県"
    :gov.unit/official-url "https://www.pref.shiga.lg.jp/"
    :gov.unit/wikidata "Q131358"
    :gov.unit/external-code ["iso3166-2:JP-25"]
@@ -5062,6 +5083,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Niigata Prefecture"
+   :gov.unit/name-local "新潟県"
    :gov.unit/official-url "https://www.pref.niigata.lg.jp/"
    :gov.unit/wikidata "Q132705"
    :gov.unit/external-code ["iso3166-2:JP-15"]
@@ -5075,6 +5097,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Yamanashi Prefecture"
+   :gov.unit/name-local "山梨県"
    :gov.unit/official-url "https://www.pref.yamanashi.jp/"
    :gov.unit/wikidata "Q132720"
    :gov.unit/external-code ["iso3166-2:JP-19"]
@@ -5088,6 +5111,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Shimane Prefecture"
+   :gov.unit/name-local "島根県"
    :gov.unit/official-url "https://www.pref.shimane.lg.jp/"
    :gov.unit/wikidata "Q132751"
    :gov.unit/external-code ["iso3166-2:JP-32"]
@@ -5101,6 +5125,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Toyama Prefecture"
+   :gov.unit/name-local "富山県"
    :gov.unit/official-url "https://www.pref.toyama.jp/"
    :gov.unit/wikidata "Q132929"
    :gov.unit/external-code ["iso3166-2:JP-16"]
@@ -5114,6 +5139,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Okayama Prefecture"
+   :gov.unit/name-local "岡山県"
    :gov.unit/official-url "https://www.pref.okayama.jp/"
    :gov.unit/wikidata "Q132936"
    :gov.unit/external-code ["iso3166-2:JP-33"]
@@ -5127,6 +5153,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Fukui Prefecture"
+   :gov.unit/name-local "福井県"
    :gov.unit/official-url "https://www.pref.fukui.lg.jp/"
    :gov.unit/wikidata "Q133879"
    :gov.unit/external-code ["iso3166-2:JP-18"]
@@ -5140,6 +5167,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Ōita Prefecture"
+   :gov.unit/name-local "大分県"
    :gov.unit/official-url "https://www.pref.oita.jp/"
    :gov.unit/wikidata "Q133924"
    :gov.unit/external-code ["iso3166-2:JP-44"]
@@ -5153,6 +5181,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Tottori Prefecture"
+   :gov.unit/name-local "鳥取県"
    :gov.unit/official-url "https://www.pref.tottori.lg.jp/"
    :gov.unit/wikidata "Q133935"
    :gov.unit/external-code ["iso3166-2:JP-31"]
@@ -5166,6 +5195,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kōchi Prefecture"
+   :gov.unit/name-local "高知県"
    :gov.unit/official-url "https://www.pref.kochi.lg.jp/"
    :gov.unit/wikidata "Q134093"
    :gov.unit/external-code ["iso3166-2:JP-39"]
@@ -5179,6 +5209,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kagoshima Prefecture"
+   :gov.unit/name-local "鹿児島県"
    :gov.unit/official-url "https://www.pref.kagoshima.jp"
    :gov.unit/wikidata "Q15701"
    :gov.unit/external-code ["iso3166-2:JP-46"]
@@ -5192,6 +5223,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Saga Prefecture"
+   :gov.unit/name-local "佐賀県"
    :gov.unit/official-url "https://www.pref.saga.lg.jp/"
    :gov.unit/wikidata "Q160420"
    :gov.unit/external-code ["iso3166-2:JP-41"]
@@ -5205,6 +5237,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Tokushima Prefecture"
+   :gov.unit/name-local "徳島県"
    :gov.unit/official-url "https://www.pref.tokushima.lg.jp/"
    :gov.unit/wikidata "Q160734"
    :gov.unit/external-code ["iso3166-2:JP-36"]
@@ -5218,6 +5251,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Kagawa Prefecture"
+   :gov.unit/name-local "香川県"
    :gov.unit/official-url "https://www.pref.kagawa.lg.jp/"
    :gov.unit/wikidata "Q161454"
    :gov.unit/external-code ["iso3166-2:JP-37"]
@@ -5231,6 +5265,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Nagasaki Prefecture"
+   :gov.unit/name-local "長崎県"
    :gov.unit/official-url "https://www.pref.nagasaki.jp/"
    :gov.unit/wikidata "Q169376"
    :gov.unit/external-code ["iso3166-2:JP-42"]
@@ -5244,6 +5279,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Tochigi Prefecture"
+   :gov.unit/name-local "栃木県"
    :gov.unit/official-url "https://www.pref.tochigi.lg.jp/"
    :gov.unit/wikidata "Q44843"
    :gov.unit/external-code ["iso3166-2:JP-09"]
@@ -5257,6 +5293,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Miyagi Prefecture"
+   :gov.unit/name-local "宮城県"
    :gov.unit/official-url "https://www.pref.miyagi.jp/"
    :gov.unit/wikidata "Q47896"
    :gov.unit/external-code ["iso3166-2:JP-04"]
@@ -5270,6 +5307,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Iwate Prefecture"
+   :gov.unit/name-local "岩手県"
    :gov.unit/official-url "https://www.pref.iwate.jp/"
    :gov.unit/wikidata "Q48326"
    :gov.unit/external-code ["iso3166-2:JP-03"]
@@ -5283,6 +5321,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Hiroshima Prefecture"
+   :gov.unit/name-local "広島県"
    :gov.unit/official-url "https://www.pref.hiroshima.lg.jp/"
    :gov.unit/wikidata "Q617375"
    :gov.unit/external-code ["iso3166-2:JP-34"]
@@ -5296,6 +5335,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Aomori Prefecture"
+   :gov.unit/name-local "青森県"
    :gov.unit/official-url "https://www.pref.aomori.lg.jp/"
    :gov.unit/wikidata "Q71699"
    :gov.unit/external-code ["iso3166-2:JP-02"]
@@ -5309,6 +5349,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Fukushima Prefecture"
+   :gov.unit/name-local "福島県"
    :gov.unit/official-url "http://www.pref.fukushima.lg.jp/site/portal-es/"
    :gov.unit/wikidata "Q71707"
    :gov.unit/external-code ["iso3166-2:JP-07"]
@@ -5322,6 +5363,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Okinawa Prefecture"
+   :gov.unit/name-local "沖縄県"
    :gov.unit/official-url "https://www.pref.okinawa.lg.jp/"
    :gov.unit/wikidata "Q766445"
    :gov.unit/external-code ["iso3166-2:JP-47"]
@@ -5335,6 +5377,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Chiba Prefecture"
+   :gov.unit/name-local "千葉県"
    :gov.unit/official-url "https://www.pref.chiba.lg.jp/"
    :gov.unit/wikidata "Q80011"
    :gov.unit/external-code ["iso3166-2:JP-12"]
@@ -5348,6 +5391,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Aichi Prefecture"
+   :gov.unit/name-local "愛知県"
    :gov.unit/official-url "http://www.pref.aichi.jp/global/en/"
    :gov.unit/wikidata "Q80434"
    :gov.unit/external-code ["iso3166-2:JP-23"]
@@ -5361,6 +5405,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Akita Prefecture"
+   :gov.unit/name-local "秋田県"
    :gov.unit/official-url "https://www.pref.akita.lg.jp/"
    :gov.unit/wikidata "Q81863"
    :gov.unit/external-code ["iso3166-2:JP-05"]
@@ -5374,6 +5419,7 @@
    :gov.unit/level :subdivision :gov.unit/branch :local
    :gov.unit/jurisdiction "jpn"
    :gov.unit/name-en "Ibaraki Prefecture"
+   :gov.unit/name-local "茨城県"
    :gov.unit/official-url "https://www.pref.ibaraki.jp/"
    :gov.unit/wikidata "Q83273"
    :gov.unit/external-code ["iso3166-2:JP-08"]

@@ -8,7 +8,7 @@ Generalises the original passport-only projection to the FULL toritsugi registry
 toritsugi `procedureId`, linked back via `:gov.procedure/toritsugi-ref`. Re-run
 after editing the toritsugi registry:
 
-    python3 20-actors/ooyake/scripts/gen_intl_procedures.py
+    python3 scripts/gen_intl_procedures.py
 
 HONEST owner-unit (G5): owner-unit = the COUNTRY-level `gov.<iso>` unit
 (unambiguous, always resolvable), NOT a specific ministry — the issuing authority
@@ -29,7 +29,6 @@ guide-time resolution rather than invented.
 from __future__ import annotations
 
 import glob
-import json
 import os
 import sys
 from pathlib import Path
@@ -37,7 +36,8 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 _REPO = _HERE.parents[2]
 _REG = _REPO / "20-actors" / "ooyake" / "registry"
-_TORITSUGI = _REPO / "20-actors" / "toritsugi" / "registry" / "procedures.seed.json"
+_TORITSUGI_ROOT = Path(os.environ.get("ETZHAYYIM_TORITSUGI_ROOT", _REPO.parent / "com-etzhayyim-toritsugi"))
+_TORITSUGI = _TORITSUGI_ROOT / "registry" / "procedures.seed.edn"
 _OUT = _REG / "gov-units.intl-procedures.seed.edn"
 
 sys.path.insert(0, str(_REPO / "20-actors" / "ooyake" / "cells" / "reconcile"))
@@ -89,7 +89,7 @@ def _owner_for(iso: str, units: set[str]) -> str | None:
 
 def main() -> int:
     units = _atlas_units()
-    tor = json.loads(_TORITSUGI.read_text())["procedures"]
+    tor = parse_edn(_TORITSUGI.read_text())["procedures"]
 
     rows, skipped = [], {}
     for p in tor:

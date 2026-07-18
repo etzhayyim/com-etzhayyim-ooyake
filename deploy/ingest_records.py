@@ -208,7 +208,7 @@ def project_gov_entity(ns: str, ent: dict) -> dict | None:
         "labelEn": str(name_en),
         "claims": claims,
         "relations": relations,
-        "extractor": "20-actors/ooyake/deploy/ingest_records.py",
+        "extractor": "deploy/ingest_records.py",
         "license": "Apache-2.0 + etzhayyim Charter Rider v2.0",
     }
     if name_local:
@@ -236,7 +236,7 @@ def project_actor_entity(seed_map: dict) -> dict | None:
                 "labelJa": "公 — 全世界政府アトラス (市民導線マップ)",
                 "claims": claims,
                 "relations": [],
-                "extractor": "20-actors/ooyake/deploy/ingest_records.py",
+                "extractor": "deploy/ingest_records.py",
                 "license": "Apache-2.0 + etzhayyim Charter Rider v2.0",
             }
     return None

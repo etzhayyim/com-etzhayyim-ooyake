@@ -24,7 +24,8 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _REG = os.path.normpath(os.path.join(_HERE, "..", "registry"))
 SEEDS = [os.path.join(_REG, "gov-units.seed.edn"),
          os.path.join(_REG, "gov-units.jp-central.seed.edn"),
-         os.path.join(_REG, "gov-units.toritsugi-procedures.seed.edn")]
+         os.path.join(_REG, "gov-units.toritsugi-procedures.seed.edn"),
+         os.path.join(_REG, "gov-procedures.bpmn.edn")]
 
 
 # ── minimal EDN reader ────────────────────────────────────────────────────────
@@ -112,6 +113,7 @@ def parse_edn(src):
 
 def _load():
     units, addrs, windows, forms, procs = {}, {}, {}, {}, {}
+    procs_bpmn = {}
     for f in SEEDS:
         doc = parse_edn(open(f, encoding="utf-8").read())
         for u in doc.get(":units", []):
@@ -124,11 +126,13 @@ def _load():
             forms[fm[":gov.form/id"]] = fm
         for p in doc.get(":procedures", []):
             procs[p[":gov.procedure/id"]] = p
-    return units, addrs, windows, forms, procs
+        for pr in doc.get(":processes", []):
+            procs_bpmn[pr[":bpmn/id"]] = pr
+    return units, addrs, windows, forms, procs, procs_bpmn
 
 
 def resolve(toritsugi_ref: str) -> dict | None:
-    units, addrs, windows, forms, procs = _load()
+    units, addrs, windows, forms, procs, procs_bpmn = _load()
     proc = next((p for p in procs.values() if p.get(":gov.procedure/toritsugi-ref") == toritsugi_ref), None)
     if proc is None:
         return None
@@ -155,6 +159,21 @@ def resolve(toritsugi_ref: str) -> dict | None:
         fm = forms.get(fid)
         return {"id": fid, "title": fm.get(":gov.form/title-local"), "chigiriRef": fm.get(":gov.form/chigiri-ref")} if fm else {"id": fid, "resolved": False}
 
+    def bpmn_view(bpmn_id):
+        # Resolve the :gov.procedure/bpmn id to the matching BPMN-as-edn process
+        # (gov-procedures.bpmn.edn) and return a summary; None if no process is
+        # defined. The STUB "bpmn.ooyake.find-service" never matches a real
+        # process entry, so a stubbed procedure resolves to None here.
+        pr = procs_bpmn.get(bpmn_id) if bpmn_id else None
+        if not pr:
+            return None
+        return {"processId": pr.get(":bpmn/id"),
+                "name": pr.get(":bpmn/name"),
+                "nodeCount": len(pr.get(":bpmn/nodes") or {}),
+                "flowCount": len(pr.get(":bpmn/flows") or {}),
+                "legalBasis": pr.get(":bpmn/legal-basis"),
+                "provenance": pr.get(":bpmn/provenance")}
+
     return {
         "toritsugiRef": toritsugi_ref,
         "procedureId": proc[":gov.procedure/id"],
@@ -166,7 +185,7 @@ def resolve(toritsugi_ref: str) -> dict | None:
         "channel": [c[1:] if isinstance(c, str) and c.startswith(":") else c for c in (proc.get(":gov.procedure/channel") or [])],
         "windows": [window_view(w) for w in (proc.get(":gov.procedure/window") or [])],
         "forms": [form_view(f) for f in (proc.get(":gov.procedure/form") or [])],
-        "bpmn": proc.get(":gov.procedure/bpmn"),
+        "bpmn": bpmn_view(proc.get(":gov.procedure/bpmn")),
         "verificationStatus": (proc.get(":gov.procedure/verification-status") or "")[1:],
     }
 
@@ -198,6 +217,18 @@ def _self_test():
         # forms exist for all but the e-Tax filing (online, no paper 様式)
         if ref != "jp-kakutei-shinkoku-etax":
             assert rr["forms"] and rr["forms"][0].get("chigiriRef"), (ref, "form/chigiri ref")
+        # BPMN: every toritsugi R0 procedure now resolves to a REAL process summary
+        # (not None, not the "bpmn.ooyake.find-service" STUB string). The summary
+        # carries the processId + node/flow counts + the same G5 legal-basis/provenance.
+        b = rr["bpmn"]
+        assert b is not None, (ref, "bpmn process summary must not be None")
+        assert isinstance(b, dict), (ref, "bpmn must be a summary map, not a stub string")
+        assert b.get("processId"), (ref, "bpmn summary must carry a processId")
+        assert b["processId"] != "bpmn.ooyake.find-service", (ref, "STUB must be gone")
+        assert b["processId"].startswith("bpmn.ooyake.proc.jpn."), (ref, b["processId"])
+        assert b["nodeCount"] >= 2 and b["flowCount"] >= 1, (ref, b)
+        assert b["legalBasis"], (ref, "bpmn summary must carry legal-basis (G5)")
+        assert b["provenance"], (ref, "bpmn summary must carry provenance (G5)")
     # 児童手当 routes to its own 子ども家庭課 window (not the koseki window)
     assert resolve("jp-jido-teate")["windows"][0]["id"] == "madoguchi.gov.jpn.city.13104.kodomo"
     # unknown ref → None (no fabrication)

@@ -1,7 +1,7 @@
 """Tests for ooyake ReconcileCell (ADR-2606021600 §5).
 
-Run: python3 -m pytest 20-actors/ooyake/cells/reconcile/test_reconcile_cell.py
- or: python3 20-actors/ooyake/cells/reconcile/test_reconcile_cell.py  (self-run)
+Run: python3 -m pytest cells/reconcile/test_reconcile_cell.py
+ or: python3 cells/reconcile/test_reconcile_cell.py  (self-run)
 """
 
 from __future__ import annotations

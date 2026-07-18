@@ -58,7 +58,7 @@ the one-per-country dedup. See [`MATURITY.md`](MATURITY.md) (per-iteration recor
 ## Layout
 
 ```
-20-actors/ooyake/
+
 ├── manifest.jsonld              # DID manifest + cells + gates + non-goals
 ├── CLAUDE.md / README.md / MATURITY.md
 ├── registry/                    # ~30 gov-units*.edn (the canonical EDN data)
@@ -74,7 +74,7 @@ the one-per-country dedup. See [`MATURITY.md`](MATURITY.md) (per-iteration recor
 ├── cells/reconcile/             # ReconcileCell + tests (incl. integrity-guard self-tests)
 ├── cells/world_model/           # WorldModelCell — ooyake↔tsumugi cross-actor reconcile + tests
 ├── deploy/run_tests.sh          # offline gate runner (integrity + coverage + reconcile + …)
-└── viz/
+└── wire/viz/
     ├── gov-atlas.geojson         # 4,521-feature world-government map (generated)
     └── gov-atlas-map.htm         # self-contained browser viewer (no CDN/tiles)
 
@@ -89,12 +89,12 @@ the one-per-country dedup. See [`MATURITY.md`](MATURITY.md) (per-iteration recor
   level/branch/sourcing enums, G5 provenance, and address→unit + parent refs.
 - `scripts/atlas_summary.py` — by level / branch / sourcing / jurisdiction.
 - `scripts/coverage_matrix.py` — per-country presence across 35 functional categories.
-- `scripts/export_geojson.py` — derive `viz/gov-atlas.geojson` from the registry.
+- `scripts/export_geojson.py` — derive `wire/viz/gov-atlas.geojson` from the registry.
 - `scripts/world_model.py` — cross-actor **world-model reconcile**: join the
   structural atlas (`:gov.unit/*`) to tsumugi's karma graph (`:organism/*`) over the
   shared `:gov.unit/organism` id-space; `--edn out/` writes the proposed world-model
   artifact. Offline, read-side proposal (G9) — see "World model" below.
-- open `viz/gov-atlas-map.htm` in a browser to explore the map.
+- open `wire/viz/gov-atlas-map.htm` in a browser to explore the map.
 
 ## World model (cross-actor reconcile)
 

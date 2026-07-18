@@ -81,7 +81,7 @@ def project_world_model() -> tuple[list[dict], dict]:
                 {"pred": "world/sourcing", "value": "representative"},
             ],
             "relations": relations,
-            "extractor": "20-actors/ooyake/deploy/ingest_world_model.py",
+            "extractor": "deploy/ingest_world_model.py",
             "license": "Apache-2.0 + etzhayyim Charter Rider v2.0",
         })
     return entities, r

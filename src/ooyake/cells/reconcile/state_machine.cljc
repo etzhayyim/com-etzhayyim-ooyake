@@ -18,14 +18,8 @@
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]))
 
-;; Resolve paths relative to this file's location, matching Python cell.py behavior
-(def ^:private CELL_DIR
-  (let [f (io/file (or (System/getProperty "user.dir") ".")
-                    "20-actors/ooyake/cells/reconcile")]
-    (if (.exists f) (str f) (str (io/file "20-actors/ooyake/cells/reconcile")))))
-
 (def ^:private REG_DIR
-  (str (io/file (io/file CELL_DIR "..") ".." "registry")))
+  (str (io/file (or (System/getProperty "user.dir") ".") "registry")))
 
 (def DEFAULT_SEED_FILES [(str (io/file REG_DIR "gov-units.seed.edn"))
                           (str (io/file REG_DIR "gov-units.jp-central.seed.edn"))])

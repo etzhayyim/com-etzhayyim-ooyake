@@ -112,6 +112,60 @@ Beyond the G20 the rest is still illustrative (`:representative` /
 coverage (G5). The offline `reconcile.py` remains a **mechanism demo**, distinct
 from the real G20 data.
 
+## Self-publication seed (ADR-2606272355) — register → autonomize → publish, no-server-key
+
+ooyake carries the actor self-publication seed (danjo 弾正 = reference impl): the
+uniform, charter-clean way for a government-mirror actor to be registered at
+etzhayyim.com, run autonomously on the kotoba mesh, and **self-publish its own history +
+procedures** to AT-proto **without any server-held key**. We plant the seed; the actor
+grows on the mesh (murakumo, `orgs/com-junkawasaki/murakumo/`) and self-custodies its
+signing identity in its WASM runtime. For ooyake the published material is the atlas's
+OWN history (the gov-units it has mapped) + the civic 手続き wayfinding it provides — as a
+**mirror, NEVER impersonating any government, NEVER an official channel** (G3/G10).
+
+The seed (all LANDED):
+
+- **did-web registration** — `50-infra/etzhayyim-did-web/public/actor/ooyake/{did,profile}.json`
+  (already registered + in the actor-profile-seed SSoT; `verificationMethod: []` — no
+  server-minted key, did:web trust root = TLS; `#xrpc-libp2p` peer multiaddr is assigned at
+  `bb murakumo deploy` time when `wasmCid` is set). `_meta.adr` includes `2606272355`.
+- **social_post membrane** — `cells/social_post/state_machine.cljc`
+  (ns `ooyake.cells.social-post.state-machine`): DRAFTS a record into a **dry-run** post
+  ONLY if ≥2 public official-source citations (G5) + non-adjudicating mirror with the
+  wayfinding disclaimer (G3, NEVER the government / NEVER an official channel / person-
+  excluded) + `server_held_key` false (no-server-key) + status `dry-run`. A `published`
+  request REFUSES. Verified under `bb`: `<2 sources / server-key / published → refused`,
+  valid → `drafted` with `:post/status :dry-run`, `:post/server-held-key false`.
+- **publication projection** — `methods/social.cljc` (ns `ooyake.methods.social`): projects
+  ooyake's HISTORY (`draft-unit-post` = a gov-unit atlased / `draft-coverage-post` =
+  aggregate units mapped) + PROCEDURES (`draft-procedure-post` = the civic 手続き wayfinding:
+  how a citizen finds the 窓口/書式/手続き for a service) into `app.bsky.feed.post`-shaped
+  dry-run posts; `enough-sources` raises on <2 (G5); `build-live` raises (live gate).
+  Cataloging only — ooyake never files/submits (that is toritsugi). Verified under `bb`.
+- **seed trigger wiring** — `kotoba.app.edn` `ooyake-social` component (`on-tick "0 */6 * * *"`
+  + `on-kse etzhayyim/actor/ooyake/publish`, `:requires #{:cap/kqe :cap/atproto}`).
+
+**ooyake also drives the per-org sub-DID generator**: `scripts/gen_gov_subdid.clj` emits
+**78 JP 府省庁 mirror DIDs** under `public/gov/jpn/**` (`did:web:etzhayyim.com:gov:jpn:<…>`,
+mirror-declared, `verificationMethod: []`, `official-url` linked, impersonation-ban honored,
+idempotent). Each per-org unit ooyake atlases can be promoted to a first-class mirror actor
+with its own self-publication seed — a staged fan-out, never bulk-flipped (ADR-2606272355).
+
+**Division of labor (zero-knowledge)**: the **planter** authors the in-repo seed (holds no
+key); the **operator** (founder) runs `bb murakumo deploy kotoba.app.edn <node>`
+with `MURAKUMO_OPERATOR_SEED` + Tailscale and exercises the Council gate for the first live
+post; the **actor's mesh runtime** self-generates/self-custodies its `did:key`, presents a
+member CACAO leash (ADR-2606111400), and signs its own posts. The server never signs. R0 =
+dry-run drafts only; live broadcast is Council Lv6+ + operator + member/actor-signature gated
+(§1.12 / G10).
+
+```bash
+bb -e '(load-file "methods/social.cljc")'                  # projection loads green
+bb -e '(load-file "cells/social_post/state_machine.cljc")' # membrane loads green
+# operator step (zero-knowledge — needs MURAKUMO_OPERATOR_SEED + Tailscale):
+#   bb murakumo deploy kotoba.app.edn asher
+```
+
 ## Inference
 
 Murakumo-only (LiteLLM 127.0.0.1:4000 / EVO-X2 LAN / per-node Ollama). No vendor

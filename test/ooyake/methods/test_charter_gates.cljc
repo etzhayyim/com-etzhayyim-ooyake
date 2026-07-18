@@ -5,13 +5,12 @@
 
 (def ^:private here (.getParentFile (java.io.File. ^String *file*)))
 (def ^:private actor-dir (.getParentFile here))
-(def ^:private actor-name (.getName actor-dir))
 (def ^:private root (.. actor-dir getParentFile getParentFile))
-(def ^:private lexdir (java.io.File. root (str "00-contracts/lexicons/com/etzhayyim/" actor-name)))
+(def ^:private lexdir (java.io.File. root "wire/lexicons"))
 
 (def ^:private SOURCING #{"authoritative" "representative"})
 
-(defn- manifest [] (json/parse-string (slurp (java.io.File. actor-dir "manifest.jsonld"))))
+(defn- manifest [] (json/parse-string (slurp (java.io.File. root "wire/manifest.jsonld"))))
 (defn- lex [name] (json/parse-string (slurp (java.io.File. lexdir name))))
 
 (defn- required-union [doc]

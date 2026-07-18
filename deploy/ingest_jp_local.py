@@ -63,7 +63,7 @@ def _entity(uid, type_ns, label_en, label_local, claims, relations):
         "labelEn": label_en,
         "claims": claims,
         "relations": relations,
-        "extractor": "20-actors/ooyake/deploy/ingest_jp_local.py",
+        "extractor": "deploy/ingest_jp_local.py",
         "license": "Apache-2.0 + etzhayyim Charter Rider v2.0",
     }
     if label_local:

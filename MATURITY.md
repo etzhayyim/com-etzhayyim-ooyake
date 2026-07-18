@@ -1793,7 +1793,7 @@ Corporation. On-mission for kanae fiscal-flow viz + danjo public-accountability.
 ## 2026-06-04 — CI gate (institutionalised)
 
 `.github/workflows/ooyake-atlas-gates.yml` runs the actor's offline gate suite on any
-PR/push touching `20-actors/ooyake/**` or the gov-atlas ontology (+ nightly +
+PR/push touching `**` or the gov-atlas ontology (+ nightly +
 manual) — the PR-level half of the two-layer defence (lefthook pre-commit + CI) per
 ADR-2605271200. Enforces, on every change: registry integrity (QID/enum/G5/ref),
 integrity-guard self-tests, G20/world coverage floors, the coverage matrix, the
@@ -1871,12 +1871,12 @@ QIDs all unique, 6,660 :authoritative**.
 `gov-units.capitals.edn` adds **191 `:gov.address :capital` records** — each country
 unit's capital city (Wikidata country P36 → capital's P625 coordinate + label), all
 191 with precise lat/lon. This completes the geolocation hierarchy: IGO/national-body
-HQs + subnational seats + **national capitals**. `viz/gov-atlas.geojson` regenerated to
+HQs + subnational seats + **national capitals**. `wire/viz/gov-atlas.geojson` regenerated to
 **4,521 features**; total `:gov.address` now **5,693** (4,521 with coordinates).
 
 ## 2026-06-03 — self-contained map viewer
 
-`viz/gov-atlas-map.htm` renders `gov-atlas.geojson` in the browser — a pure-canvas
+`wire/viz/gov-atlas-map.htm` renders `gov-atlas.geojson` in the browser — a pure-canvas
 equirectangular world map (drag-pan, wheel-zoom, click-for-details) with the 4,330
 government bodies colour-coded by branch (executive / subnational / independent /
 legislative / judicial / intergovernmental), a live legend + per-branch filter, and
@@ -1886,12 +1886,12 @@ offline, drop-in. Turns the atlas into something a human can actually explore.
 
 ## 2026-06-03 — GeoJSON export (the atlas is now a usable world map)
 
-`scripts/export_geojson.py` derives `viz/gov-atlas.geojson` from the registry —
+`scripts/export_geojson.py` derives `wire/viz/gov-atlas.geojson` from the registry —
 joins every coordinate-bearing `:gov.address` to its `:gov.unit` and emits a GeoJSON
 FeatureCollection (**4,330 Point features**, properties: id/name/level/branch/
 jurisdiction/wikidata/kind/city/official_url). Drop-in for any GIS tool or the
 kami-engine viewer. `--check` mode (wired into `run_tests.sh`) validates the output is
-well-formed GeoJSON with ≥4,000 features. The committed `viz/gov-atlas.geojson` (~1.3 MB)
+well-formed GeoJSON with ≥4,000 features. The committed `wire/viz/gov-atlas.geojson` (~1.3 MB)
 is the rendered world-government map spanning national institutions + subnational
 seats across ~190 jurisdictions.
 

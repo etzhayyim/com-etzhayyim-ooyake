@@ -50,7 +50,7 @@
    :gov.procedure/required-docs ["出生届書 (医師・助産師の出生証明欄記入済)" "母子健康手帳" "届出人の本人確認書類"]
    :gov.procedure/form ["form.jpn.shussei-todoke"]
    :gov.procedure/window ["madoguchi.gov.jpn.city.13104.koseki-jumin"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service" :gov.procedure/toritsugi-ref "jp-shussei-todoke"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.shussei-todoke" :gov.procedure/toritsugi-ref "jp-shussei-todoke"
    :gov.procedure/sourcing :representative :gov.procedure/provenance "https://www.moj.go.jp/MINJI/minji01_00001.html"
    :gov.procedure/last-verified "2026-06-02" :gov.procedure/verification-status :unverified-seed}
 
@@ -63,7 +63,7 @@
    :gov.procedure/required-docs ["交付申請書 (個人番号通知書/QR 付き)" "顔写真 (規格準拠)" "(交付時) 本人確認書類"]
    :gov.procedure/form ["form.jpn.mynumber-card"]
    :gov.procedure/window ["madoguchi.gov.jpn.city.13104.koseki-jumin"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service" :gov.procedure/toritsugi-ref "jp-mynumber-card"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.mynumber-card" :gov.procedure/toritsugi-ref "jp-mynumber-card"
    :gov.procedure/sourcing :representative :gov.procedure/provenance "https://www.kojinbango-card.go.jp/ (所管: J-LIS + 市区町村)"
    :gov.procedure/last-verified "2026-06-02" :gov.procedure/verification-status :unverified-seed}
 
@@ -75,6 +75,6 @@
    :gov.procedure/required-docs ["認定請求書" "請求者名義の振込先口座" "請求者の健康保険証 (写し)" "本人確認書類"]
    :gov.procedure/form ["form.jpn.jido-teate"]
    :gov.procedure/window ["madoguchi.gov.jpn.city.13104.kodomo"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service" :gov.procedure/toritsugi-ref "jp-jido-teate"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.jido-teate" :gov.procedure/toritsugi-ref "jp-jido-teate"
    :gov.procedure/sourcing :representative :gov.procedure/provenance "https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/"
    :gov.procedure/last-verified "2026-06-02" :gov.procedure/verification-status :unverified-seed}]}

@@ -4,7 +4,7 @@
 # Pure offline verification — no network, no kotoba node, no deploy. Each suite is
 # run only if present (robust across merge states). Exits non-zero if any fails.
 #
-#   bash 20-actors/ooyake/deploy/run_tests.sh
+#   bash deploy/run_tests.sh
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ACTOR="$(cd "$HERE/.." && pwd)"

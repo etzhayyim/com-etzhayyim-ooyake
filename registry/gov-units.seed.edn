@@ -349,7 +349,7 @@
    :gov.procedure/required-docs ["本人確認書類" "(コンビニ交付) マイナンバーカード + 暗証番号"]
    :gov.procedure/form ["form.jpn.juminhyo-seikyu"]
    :gov.procedure/window ["madoguchi.gov.jpn.city.13104.koseki-jumin"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.juminhyo-utsushi"
    :gov.procedure/toritsugi-ref "jp-juminhyo-utsushi"
    :gov.procedure/sourcing :representative
    :gov.procedure/provenance "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/juuki.html"
@@ -368,7 +368,7 @@
    :gov.procedure/required-docs ["転出証明書" "本人確認書類" "マイナンバーカード or 通知カード"]
    :gov.procedure/form ["form.jpn.tennyu-todoke"]
    :gov.procedure/window ["madoguchi.gov.jpn.city.13104.koseki-jumin"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.tennyu-todoke"
    :gov.procedure/toritsugi-ref "jp-tennyu-todoke"
    :gov.procedure/sourcing :representative
    :gov.procedure/provenance "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
@@ -386,7 +386,7 @@
    :gov.procedure/statutory-days 0
    :gov.procedure/required-docs ["源泉徴収票 / 収入・経費記録" "各種控除証明書" "マイナンバーカード (e-Tax 認証)"]
    :gov.procedure/window ["madoguchi.gov.jpn.nta.kojimachi.kojin"]
-   :gov.procedure/bpmn "bpmn.ooyake.find-service"
+   :gov.procedure/bpmn "bpmn.ooyake.proc.jpn.kakutei-shinkoku-etax"
    :gov.procedure/toritsugi-ref "jp-kakutei-shinkoku-etax"
    :gov.procedure/sourcing :representative
    :gov.procedure/provenance "https://www.nta.go.jp/taxes/shiraberu/shinkoku/kakutei.htm"

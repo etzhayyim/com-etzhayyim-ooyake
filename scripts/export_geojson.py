@@ -3,13 +3,13 @@
 
 Reads every `registry/gov-units*.edn`, joins each `:gov.address` that carries lat/lon
 to its `:gov.unit`, and writes a GeoJSON FeatureCollection (one Point per geolocated
-body) to `viz/gov-atlas.geojson`. Drop it into any map tool / the kami-engine viewer.
+body) to `wire/viz/gov-atlas.geojson`. Drop it into any map tool / the kami-engine viewer.
 
 Properties per feature: id, name, level, branch, jurisdiction, wikidata, kind, city,
 official_url. READ-ONLY over the registry (writes only the viz artifact).
 
 Usage:
-    python3 export_geojson.py            # write viz/gov-atlas.geojson
+    python3 export_geojson.py            # write wire/viz/gov-atlas.geojson
     python3 export_geojson.py --check    # validate only, write to a temp path (CI gate)
 """
 from __future__ import annotations

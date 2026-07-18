@@ -7,8 +7,8 @@ edit that wires a `:gov.unit/organism` link but forgets the organism (or drifts 
 gate floor, or renames the graph, or drops a cell from the manifest) fails loudly
 here instead of silently shipping.
 
-Run: python3 -m pytest 20-actors/ooyake/cells/world_model/test_consistency.py
- or: python3 20-actors/ooyake/cells/world_model/test_consistency.py  (self-run)
+Run: python3 -m pytest cells/world_model/test_consistency.py
+ or: python3 cells/world_model/test_consistency.py  (self-run)
 """
 
 from __future__ import annotations

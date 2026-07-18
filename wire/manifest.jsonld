@@ -6,6 +6,7 @@
   "@type": "ActorManifest",
   "id": "did:web:ooyake.etzhayyim.com",
   "name": "ooyake",
+  "integrates": ["danjo", "kanae", "tsumugi", "toritsugi", "himotoki", "chigiri"],
   "displayName": "公 — World Government Atlas (civic wayfinding map)",
   "displayNameJa": "公",
   "displayNameEn": "Ooyake",
@@ -66,7 +67,7 @@
   "govAtlasGraph": {
     "description": "The core: every government unit encoded as :gov.unit/* (recursive :gov.unit/parent tree) with :gov.address/* (住所), :gov.window/* (窓口), :gov.form/* (書式), :gov.procedure/* (手続き), :gov.bpmn/* (BPMN), per 00-contracts/schemas/gov-atlas-ontology.kotoba.edn. Seed at registry/gov-units.seed.edn.",
     "schemaFile": "/00-contracts/schemas/gov-atlas-ontology.kotoba.edn",
-    "seedFile": "/20-actors/ooyake/registry/gov-units.seed.edn",
+    "seedFile": "registry/gov-units.seed.edn",
     "seedProofChain": "gov.jpn → 財務省 → 国税庁 → 東京国税局 → 麹町税務署 (住所+窓口); 東京都 → 新宿区 → 戸籍住民課窓口 (住所); + USA Treasury/IRS, UK HMRC, DE, KR country/ministry rows; + EU supranational. 3 procedures (住民票/転入届/確定申告) with 書式 + BPMN + toritsugi-ref.",
     "graphName": "gov-atlas-v1",
     "coverageHonesty": "ALL seed rows ship :sourcing :representative + :verification-status :unverified-seed (G5). This is a PROOF-OF-MODEL, not coverage. Maturity reported per ADR-2605250680.",
@@ -149,6 +150,6 @@
       "murakumoInference": "/90-docs/adr/2605215000-etzhayyim-inference-murakumo-only-no-runpod.md"
     },
     "schema": "/00-contracts/schemas/gov-atlas-ontology.kotoba.edn",
-    "registrySeed": "/20-actors/ooyake/registry/gov-units.seed.edn"
+    "registrySeed": "registry/gov-units.seed.edn"
   }
 }

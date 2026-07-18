@@ -68,7 +68,7 @@ def _entity(uid, label_en, label_local, claims, relations):
     out = {
         "id": uid, "type": "gov.unit", "labelEn": label_en,
         "claims": claims, "relations": relations,
-        "extractor": "20-actors/ooyake/deploy/ingest_states_global.py",
+        "extractor": "deploy/ingest_states_global.py",
         "license": "Apache-2.0 + etzhayyim Charter Rider v2.0",
     }
     if label_local and label_local != label_en:
