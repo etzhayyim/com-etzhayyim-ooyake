@@ -1,6 +1,7 @@
 (ns ooyake.methods.test-charter-gates
   "ooyake — constitutional-gate conformance tests. Substrate-native Clojure (ADR-2606160842); 1:1 port of pruned test_charter_gates.py."
-  (:require [clojure.test :refer [deftest is run-tests]]
+  (:require [clojure.edn :as edn]
+            [clojure.test :refer [deftest is run-tests]]
             [cheshire.core :as json]))
 
 (def ^:private here (.getParentFile (java.io.File. ^String *file*)))
@@ -11,7 +12,7 @@
 
 (def ^:private SOURCING #{"authoritative" "representative"})
 
-(defn- manifest [] (json/parse-string (slurp (java.io.File. actor-dir "manifest.jsonld"))))
+(defn- manifest [] (edn/read-string (slurp (java.io.File. actor-dir "manifest.edn"))))
 (defn- lex [name] (json/parse-string (slurp (java.io.File. lexdir name))))
 
 (defn- required-union [doc]
@@ -30,8 +31,8 @@
 
 ;; ── full gate set ──
 (deftest test-all-12-gates-declared
-  (is (= (set (keys (get-in (manifest) ["constitutionalGates" "gates"])))
-         (set (map #(str "G" %) (range 1 13))))))
+  (is (= (set (keys (get-in (manifest) [:constitutional-gates :gates])))
+         (set (map #(keyword (str "g" %)) (range 1 13))))))
 
 ;; ── provenance + sourcing discipline on every public-record lexicon ──
 (deftest test-provenance-and-sourcing-required

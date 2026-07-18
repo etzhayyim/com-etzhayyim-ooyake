@@ -3,6 +3,28 @@
 Honest status per the gov-coverage maturity model (ADR-2605250680). Coverage gated
 by `:sourcing` (G5): only `:authoritative` rows count.
 
+## 2026-07-01 — member-support actor coverage: Denmark national bodies
+
+Added `registry/gov-units.dnk-coverage.edn` as an EDN-only, official-URL-backed
+national actor layer for Denmark. This is support metadata for a member-authorized
+administrative procedure agent, not a government publication channel.
+
+- 30 authoritative Denmark actors added across ministries, courts, parliament,
+  central bank, audit, ombudsman, NHRI, statistics, data protection, financial
+  supervision, competition, revenue, prosecution, energy, tourism, and election
+  administration.
+- Coverage moved Denmark from **0/35 → 33/35** categories in the CLJC coverage
+  matrix. Global average moved from **16.6/35 → 16.8/35**; `finance` and `foreign`
+  are now **193/193**.
+- QIDs intentionally omitted in this batch to avoid identifier fabrication; the
+  G5 anchor is the official body URL in `:gov.unit/official-url` and
+  `:gov.unit/provenance`, with `:last-verified "2026-07-01"`.
+- Honest residual gaps remain: Denmark has no central anti-corruption body per
+  current public institutional notes, and `interior` is left unasserted until the
+  current ministerial ownership is represented without over-claiming.
+
+Verified: `check_seed_integrity.py --quiet` ✓; `bb coverage` ✓; `bb test` ✓.
+
 ## 2026-06-05 — cross-actor world-model reconcile (ooyake↔tsumugi)
 
 The atlas was a structural SSoT that *other* actors consumed, but nothing actually

@@ -1,0 +1,13 @@
+{:paths ["src" "test" "scripts"]
+ :tasks
+ {test {:doc "Run ooyake cljc actor boundary tests."
+        :task (do
+                (require 'clojure.test
+                         'ooyake.murakumo-test)
+                (let [run-tests (requiring-resolve 'clojure.test/run-tests)
+                      r (run-tests 'ooyake.murakumo-test)]
+                  (System/exit (if (zero? (+ (:fail r) (:error r))) 0 1))))}
+  coverage {:doc "Run kotoba/CLJC functional coverage matrix."
+            :task (do
+                    (require 'coverage-matrix)
+                    ((requiring-resolve 'coverage-matrix/-main)))}}}

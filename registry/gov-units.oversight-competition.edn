@@ -75,11 +75,12 @@
    :gov.unit/parent "gov.deu"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "deu"
-   :gov.unit/name-en "Wettbewerbszentrale e.V."
-   :gov.unit/official-url "https://www.wettbewerbszentrale.de/"
-   :gov.unit/wikidata "Q190367"
+   :gov.unit/name-en "Federal Cartel Office"
+   :gov.unit/name-local "Bundeskartellamt"
+   :gov.unit/official-url "https://www.bundeskartellamt.de/"
+   :gov.unit/wikidata "Q450394"
    :gov.unit/cofog ["04.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.wettbewerbszentrale.de/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.bundeskartellamt.de/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.fra.competition"
@@ -87,11 +88,10 @@
    :gov.unit/parent "gov.fra"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "fra"
-   :gov.unit/name-en "Autorité de la concurrence de la Nouvelle-Calédonie"
-   :gov.unit/official-url "https://autorite-concurrence.nc/"
-   :gov.unit/wikidata "Q63036250"
+   :gov.unit/name-en "Autorité de la concurrence"
+   :gov.unit/official-url "https://www.autoritedelaconcurrence.fr/en"
    :gov.unit/cofog ["04.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://autorite-concurrence.nc/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.autoritedelaconcurrence.fr/en" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.gbr.competition"

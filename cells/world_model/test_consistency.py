@@ -14,7 +14,6 @@ Run: python3 -m pytest 20-actors/ooyake/cells/world_model/test_consistency.py
 from __future__ import annotations
 
 import glob
-import json
 import os
 import sys
 
@@ -66,8 +65,8 @@ def test_gate_expected_set_matches_registry():
 
 
 def test_manifest_declares_world_model_cell():
-    m = json.loads(open(os.path.join(_ACTOR, "manifest.jsonld"), encoding="utf-8").read())
-    names = {c["name"] for c in m.get("cells", [])}
+    m = parse_edn(open(os.path.join(_ACTOR, "manifest.edn"), encoding="utf-8").read())
+    names = {c[":name"] for c in m.get(":cells", [])}
     assert "world_model" in names, names
 
 

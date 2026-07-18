@@ -931,17 +931,17 @@
    :gov.address/unit "gov.deu.competition"
    :gov.address/kind :headquarters
    :gov.address/country "deu"
-   :gov.address/line-en "Bad Homburg vor der Höhe"
+   :gov.address/line-en "Bundeskartellamt, Bonn"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q190367" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://www.bundeskartellamt.de/" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.fra.competition.hq"
    :gov.address/unit "gov.fra.competition"
    :gov.address/kind :headquarters
    :gov.address/country "fra"
-   :gov.address/line-en "Nouméa"
+   :gov.address/line-en "Autorité de la concurrence, 11 rue de l'Échelle, Paris"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q63036250" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://www.autoritedelaconcurrence.fr/en" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.gbr.competition.hq"
    :gov.address/unit "gov.gbr.competition"
@@ -1109,10 +1109,9 @@
    :gov.address/unit "gov.bra.audit"
    :gov.address/kind :headquarters
    :gov.address/country "bra"
-   :gov.address/line-en "Salvador"
-   :gov.address/lat -12.9503 :gov.address/lon -38.43634
+   :gov.address/line-en "Federal Court of Accounts of Brazil (TCU), Brasília"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q10384661" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://portal.tcu.gov.br/english" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.deu.audit.hq"
    :gov.address/unit "gov.deu.audit"
@@ -1159,9 +1158,9 @@
    :gov.address/unit "gov.lux.audit"
    :gov.address/kind :headquarters
    :gov.address/country "lux"
-   :gov.address/line-en "Luxembourg"
+   :gov.address/line-en "Cour des comptes du Grand-Duché de Luxembourg, 2 avenue Monterey, L-2163 Luxembourg"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q8900" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://cour-des-comptes.public.lu/" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.mar.audit.hq"
    :gov.address/unit "gov.mar.audit"
@@ -2376,7 +2375,7 @@
    :gov.address/country "gbr"
    :gov.address/line-en "London"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q3155375" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://www.equalityhumanrights.com/" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.idn.nhri.hq"
    :gov.address/unit "gov.idn.nhri"
@@ -2424,10 +2423,9 @@
    :gov.address/unit "gov.usa.nhri"
    :gov.address/kind :headquarters
    :gov.address/country "usa"
-   :gov.address/line-en "Washington, D.C."
-   :gov.address/lat 38.8982 :gov.address/lon -77.04298
+   :gov.address/line-en "U.S. Commission on Civil Rights, 1331 Pennsylvania Ave. NW, Washington, DC 20425"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q1589444" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://www.usccr.gov/" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.zaf.nhri.hq"
    :gov.address/unit "gov.zaf.nhri"
@@ -5686,9 +5684,9 @@
    :gov.address/unit "gov.nor.ombudsman"
    :gov.address/kind :headquarters
    :gov.address/country "nor"
-   :gov.address/line-en "Ålesund"
+   :gov.address/line-en "Norwegian Parliamentary Ombud, Oslo"
    :gov.address/sourcing :authoritative
-   :gov.address/provenance "https://www.wikidata.org/wiki/Q88773557" :gov.address/last-verified "2026-06-03"}
+   :gov.address/provenance "https://www.sivilombudet.no/en/" :gov.address/last-verified "2026-07-01"}
 
   {:gov.address/id "addr.gov.pak.ombudsman.hq"
    :gov.address/unit "gov.pak.ombudsman"
