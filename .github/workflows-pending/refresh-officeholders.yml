@@ -1,0 +1,70 @@
+# ooyake 公 — weekly public-office-holder refresh (ADR-2607253200).
+#
+# WHY THIS EXISTS: who holds an office is a CHANGING fact. :gov.person/last-verified
+# dates every row precisely because of that — but a date only helps if something
+# re-takes the reading. Left to a human remembering to run a script, the registry
+# degrades into a snapshot of one afternoon in July 2026 that still looks current.
+#
+# The concrete evidence this matters: on the very first pull, the UK head-of-government
+# row read `since 2026-07-20` — five days old, and newer than the agent's own knowledge.
+# Offices turn over on a scale of days, not years.
+#
+# SAFETY: the job fails instead of committing when
+#   - a group's row count collapses (fetch_officeholders.cljs min-retained-ratio) —
+#     an upstream outage must not land as "these offices are now vacant"; or
+#   - verify_officeholders.cljs finds an orphan unit reference, a duplicate id, a
+#     private-data attribute (G6), or a row missing provenance.
+# The G6 boundary is therefore enforced on every automated write, not only when a
+# human happens to look.
+
+name: refresh-officeholders
+
+on:
+  schedule:
+    # Mondays 04:23 UTC — after kawaraban's feed refresh, off the hour deliberately.
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-officeholders
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install nbb
+        run: npm install -g nbb@latest
+
+      - name: Re-read every office holder from Wikidata
+        run: nbb scripts/fetch_officeholders.cljs
+
+      - name: Enforce the registry gate (linkage, uniqueness, G6, provenance)
+        run: nbb scripts/verify_officeholders.cljs
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- registry/; then
+            echo "no change — every office holder reads the same as last week"
+            exit 0
+          fi
+          git config user.name "ooyake-refresh[bot]"
+          git config user.email "ooyake-refresh@users.noreply.github.com"
+          git add registry/
+          git commit -m "chore(registry): weekly office-holder refresh
+
+          Automated by .github/workflows/refresh-officeholders.yml (ADR-2607253200).
+          Current holders re-read from Wikidata; :gov.person/last-verified carries
+          today's date. Rows that changed are office turnovers or upstream corrections
+          — the diff is the record of which."
+          git push
