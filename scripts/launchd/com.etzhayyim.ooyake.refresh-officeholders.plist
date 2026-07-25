@@ -24,7 +24,7 @@
        launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.etzhayyim.ooyake.refresh-officeholders.plist
      手動実行:
        launchctl kickstart -k gui/$(id -u)/com.etzhayyim.ooyake.refresh-officeholders
-     ログ: ~/.kawaraban/logs/refresh-officeholders.log
+     ログ: ~/.ooyake/logs/refresh-officeholders.log
 -->
 <plist version="1.0">
 <dict>
@@ -48,8 +48,8 @@
     <key>Minute</key><integer>23</integer>
   </dict>
   <key>RunAtLoad</key><false/>
-  <key>StandardOutPath</key><string>/Users/junkawasaki/.kawaraban/logs/refresh-officeholders.log</string>
-  <key>StandardErrorPath</key><string>/Users/junkawasaki/.kawaraban/logs/refresh-officeholders.log</string>
+  <key>StandardOutPath</key><string>/Users/junkawasaki/.ooyake/logs/refresh-officeholders.log</string>
+  <key>StandardErrorPath</key><string>/Users/junkawasaki/.ooyake/logs/refresh-officeholders.log</string>
   <key>ProcessType</key><string>Background</string>
 </dict>
 </plist>
