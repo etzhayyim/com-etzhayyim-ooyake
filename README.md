@@ -62,6 +62,8 @@ the one-per-country dedup. See [`MATURITY.md`](MATURITY.md) (per-iteration recor
 ├── manifest.jsonld              # DID manifest + cells + gates + non-goals
 ├── CLAUDE.md / README.md / MATURITY.md
 ├── registry/                    # ~30 gov-units*.edn (the canonical EDN data)
+│   ├── gov-officeholders.*.edn      # 公人 — current public office holders, keyed to :gov.unit/id
+│   └── gov-officeholders.schema.edn # :gov.person/* attribute declarations (Datomic/DataScript)
 │   ├── gov-units.seed.edn / gov-units.jp-central.seed.edn   # JP backbone
 │   ├── gov-units.g20*.edn       # G20 countries + finance ministries + central banks
 │   ├── gov-units.world-*.edn    # world countries / ministries / legislatures / courts / central banks
