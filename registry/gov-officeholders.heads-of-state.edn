@@ -39,6 +39,8 @@
 
   #:gov.person{:wikidata "Q1951896", :sourcing :authoritative, :unit-wikidata "Q878", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "are", :last-verified "2026-07-25", :name-en "Mohammed Bin Zayed Al Nahyan", :unit "gov.are", :role-en "Head of State", :name-native "محمّد بن زايد آل نهيان", :official-url "https://u.ae", :since "2022-05-14", :id "person.are.head-of-state"}
 
+  #:gov.person{:wikidata "Q28058800", :sourcing :authoritative, :unit-wikidata "Q4294823", :role-property "position-held", :provenance "wikidata", :jurisdiction "arg", :last-verified "2026-07-25", :name-en "Luis Caputo", :unit "gov.arg.economia", :role-en "Minister of Economy", :position-wikidata "Q108550498", :official-url "https://www.argentina.gob.ar/economia", :since "2023-12-10", :id "person.arg.economia.q108550498"}
+
   #:gov.person{:wikidata "Q52395487", :sourcing :authoritative, :unit-wikidata "Q414", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "arg", :last-verified "2026-07-25", :name-en "Javier Milei", :unit "gov.arg", :role-en "Head of Government", :name-native "Javier Gerardo Milei", :official-url "https://www.argentina.gob.ar/", :since "2023-12-10", :id "person.arg.head-of-government"}
 
   #:gov.person{:wikidata "Q52395487", :sourcing :authoritative, :unit-wikidata "Q414", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "arg", :last-verified "2026-07-25", :name-en "Javier Milei", :unit "gov.arg", :role-en "Head of State", :name-native "Javier Gerardo Milei", :official-url "https://www.argentina.gob.ar/", :since "2023-12-10", :id "person.arg.head-of-state"}
@@ -145,6 +147,8 @@
 
   #:gov.person{:wikidata "Q57758", :sourcing :authoritative, :unit-wikidata "Q929", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "caf", :last-verified "2026-07-25", :name-en "Faustin-Archange Touadéra", :unit "gov.caf", :role-en "Head of State", :official-url "https://www.gouv.cf/", :since "2016-03-30", :id "person.caf.head-of-state.2"}
 
+  #:gov.person{:wikidata "Q3034854", :sourcing :authoritative, :unit-wikidata "Q1191438", :role-property "position-held", :provenance "wikidata", :jurisdiction "can", :last-verified "2026-07-25", :name-en "Dominic LeBlanc", :unit "gov.can.fin", :role-en "Minister of Finance", :position-wikidata "Q3251818", :official-url "https://www.canada.ca/en/department-finance.html", :since "2024-12-16", :id "person.can.fin.q3251818"}
+
   #:gov.person{:wikidata "Q192533", :sourcing :authoritative, :unit-wikidata "Q16", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "can", :last-verified "2026-07-25", :name-en "Mark Carney", :unit "gov.can", :role-en "Head of Government", :official-url "https://www.canada.ca/", :since "2025-03-14", :id "person.can.head-of-government"}
 
   #:gov.person{:wikidata "Q43274", :sourcing :authoritative, :unit-wikidata "Q16", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "can", :last-verified "2026-07-25", :name-en "Charles III", :unit "gov.can", :role-en "Head of State", :name-native "Charles III, King of the United Kingdom", :official-url "https://www.canada.ca/", :since "2022-09-08", :id "person.can.head-of-state"}
@@ -156,6 +160,8 @@
   #:gov.person{:wikidata "Q4414390", :sourcing :authoritative, :unit-wikidata "Q148", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "chn", :last-verified "2026-07-25", :name-en "Li Qiang", :unit "gov.chn", :role-en "Head of Government", :name-native "李强", :official-url "https://www.gov.cn/", :since "2023-03-11", :id "person.chn.head-of-government"}
 
   #:gov.person{:wikidata "Q15031", :sourcing :authoritative, :unit-wikidata "Q148", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "chn", :last-verified "2026-07-25", :name-en "Xi Jinping", :unit "gov.chn", :role-en "Head of State", :name-native "习近平", :official-url "https://www.gov.cn/", :since "2013-03-14", :id "person.chn.head-of-state"}
+
+  #:gov.person{:wikidata "Q30950293", :sourcing :authoritative, :unit-wikidata "Q832407", :role-property "position-held", :provenance "wikidata", :jurisdiction "chn", :last-verified "2026-07-25", :name-en "Lan Fo'an", :unit "gov.chn.mof", :role-en "Minister of Finance of the People's Republic of China", :position-wikidata "Q27826748", :official-url "https://www.mof.gov.cn/", :since "2023-10-24", :id "person.chn.mof.q27826748"}
 
   #:gov.person{:wikidata "Q3434569", :sourcing :authoritative, :unit-wikidata "Q1008", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "civ", :last-verified "2026-07-25", :name-en "Robert Beugré Mambé", :unit "gov.civ", :role-en "Head of Government", :official-url "https://www.gouv.ci", :since "2023-10-16", :id "person.civ.head-of-government"}
 
@@ -203,7 +209,7 @@
 
   #:gov.person{:wikidata "Q2080040", :sourcing :authoritative, :unit-wikidata "Q213", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "cze", :last-verified "2026-07-25", :name-en "Petr Pavel", :unit "gov.cze", :role-en "Head of State", :official-url "https://www.czechia.eu/", :since "2023-03-09", :id "person.cze.head-of-state"}
 
-  #:gov.person{:wikidata "Q1806261", :sourcing :authoritative, :unit-wikidata "Q499118", :role-property "chairperson", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Lars Klingbeil", :unit "gov.deu.bmf", :role-en "Chairperson", :official-url "https://www.bundesfinanzministerium.de/", :since "2025-05-06", :id "person.deu.bmf.chairperson"}
+  #:gov.person{:wikidata "Q1806261", :sourcing :authoritative, :unit-wikidata "Q499118", :role-property "position-held", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Lars Klingbeil", :unit "gov.deu.bmf", :role-en "Federal Minister of Finance", :position-wikidata "Q22575092", :official-url "https://www.bundesfinanzministerium.de/", :since "2025-05-06", :id "person.deu.bmf.q22575092"}
 
   #:gov.person{:wikidata "Q566257", :sourcing :authoritative, :unit-wikidata "Q183", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Friedrich Merz", :unit "gov.deu", :role-en "Head of Government", :official-url "https://www.bund.de/", :since "2025-05-06", :id "person.deu.head-of-government"}
 
@@ -267,7 +273,7 @@
 
   #:gov.person{:wikidata "Q3052772", :sourcing :authoritative, :unit-wikidata "Q142", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Emmanuel Macron", :unit "gov.fra", :role-en "Head of State", :official-url "https://www.gouvernement.fr/", :since "2017-05-14", :id "person.fra.head-of-state"}
 
-  #:gov.person{:wikidata "Q63436533", :sourcing :authoritative, :unit-wikidata "Q1416512", :role-property "director", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Antoine Armand", :unit "gov.fra.minefi", :role-en "Director / Head", :official-url "https://www.economie.gouv.fr/", :id "person.fra.minefi.director"}
+  #:gov.person{:wikidata "Q45192006", :sourcing :authoritative, :unit-wikidata "Q1416512", :role-property "position-held", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Éric Lombard", :unit "gov.fra.minefi", :role-en "Minister of the Economy, Finances and Industry", :position-wikidata "Q20202948", :official-url "https://www.economie.gouv.fr/", :since "2024-12-23", :id "person.fra.minefi.q20202948"}
 
   #:gov.person{:wikidata "Q7984081", :sourcing :authoritative, :unit-wikidata "Q702", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "fsm", :last-verified "2026-07-25", :name-en "Wesley Simina", :unit "gov.fsm", :role-en "Head of Government", :official-url "https://gov.fm", :since "2023-01-01", :id "person.fsm.head-of-government"}
 
@@ -282,6 +288,8 @@
   #:gov.person{:wikidata "Q43274", :sourcing :authoritative, :unit-wikidata "Q145", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "gbr", :last-verified "2026-07-25", :name-en "Charles III", :unit "gov.gbr", :role-en "Head of State", :name-native "Charles III, King of the United Kingdom", :official-url "https://www.gov.uk/", :since "2022-09-08", :id "person.gbr.head-of-state"}
 
   #:gov.person{:wikidata "Q19560694", :sourcing :authoritative, :unit-wikidata "Q166559", :role-property "chief-executive", :provenance "wikidata", :jurisdiction "gbr", :last-verified "2026-07-25", :name-en "Jim Harra", :unit "gov.gbr.hmrc", :role-en "Chief Executive", :official-url "https://www.gov.uk/government/organisations/hm-revenue-customs", :since "2019-10-01", :id "person.gbr.hmrc.chief-executive"}
+
+  #:gov.person{:wikidata "Q109897708", :sourcing :authoritative, :unit-wikidata "Q166559", :role-property "position-held", :provenance "wikidata", :jurisdiction "gbr", :last-verified "2026-07-25", :name-en "John-Paul Marks", :unit "gov.gbr.hmrc", :role-en "First Permanent Secretary and Chief Executive of HM Revenue and Customs", :position-wikidata "Q98226318", :official-url "https://www.gov.uk/government/organisations/hm-revenue-customs", :since "2025-04-06", :id "person.gbr.hmrc.q98226318"}
 
   #:gov.person{:wikidata "Q27885302", :sourcing :authoritative, :unit-wikidata "Q230", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "geo", :last-verified "2026-07-25", :name-en "Irakli Kobakhidze", :unit "gov.geo", :role-en "Head of Government", :name-native "ირაკლი კობახიძე", :official-url "https://www.gov.ge/", :since "2024-02-08", :id "person.geo.head-of-government"}
 
@@ -341,11 +349,13 @@
 
   #:gov.person{:wikidata "Q3177708", :sourcing :authoritative, :unit-wikidata "Q12490741", :role-property "chairperson", :provenance "wikidata", :jurisdiction "idn", :last-verified "2026-07-25", :name-en "Sri Mulyani Indrawati", :unit "gov.idn.kemenkeu", :role-en "Chairperson", :official-url "https://www.kemenkeu.go.id/", :since "2024-10-21", :id "person.idn.kemenkeu.chairperson"}
 
+  #:gov.person{:wikidata "Q117349989", :sourcing :authoritative, :unit-wikidata "Q12490741", :role-property "position-held", :provenance "wikidata", :jurisdiction "idn", :last-verified "2026-07-25", :name-en "Purbaya Yudhi Sadewa", :unit "gov.idn.kemenkeu", :role-en "Minister of Finance", :position-wikidata "Q57948304", :official-url "https://www.kemenkeu.go.id/", :since "2025-09-08", :id "person.idn.kemenkeu.q57948304"}
+
   #:gov.person{:wikidata "Q1058", :sourcing :authoritative, :unit-wikidata "Q668", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "ind", :last-verified "2026-07-25", :name-en "Narendra Modi", :unit "gov.ind", :role-en "Head of Government", :name-native "નરેન્દ્ર મોદી", :official-url "https://www.india.gov.in/", :since "2014-05-26", :id "person.ind.head-of-government"}
 
   #:gov.person{:wikidata "Q19901232", :sourcing :authoritative, :unit-wikidata "Q668", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "ind", :last-verified "2026-07-25", :name-en "Droupadi Murmu", :unit "gov.ind", :role-en "Head of State", :name-native "द्रौपदी मुर्मू", :official-url "https://www.india.gov.in/", :since "2022-07-25", :id "person.ind.head-of-state"}
 
-  #:gov.person{:wikidata "Q7040049", :sourcing :authoritative, :unit-wikidata "Q2641068", :role-property "director", :provenance "wikidata", :jurisdiction "ind", :last-verified "2026-07-25", :name-en "Nirmala Sitharaman", :unit "gov.ind.mof", :role-en "Director / Head", :name-native "நிர்மலா சீதாராமன்", :official-url "https://finmin.nic.in/", :id "person.ind.mof.director"}
+  #:gov.person{:wikidata "Q7040049", :sourcing :authoritative, :unit-wikidata "Q2641068", :role-property "position-held", :provenance "wikidata", :jurisdiction "ind", :last-verified "2026-07-25", :name-en "Nirmala Sitharaman", :unit "gov.ind.mof", :role-en "Minister of Finance", :name-native "நிர்மலா சீதாராமன்", :position-wikidata "Q1416501", :official-url "https://finmin.nic.in/", :since "2019-05-31", :id "person.ind.mof.q1416501"}
 
   #:gov.person{:wikidata "Q920403", :sourcing :authoritative, :unit-wikidata "Q27", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "irl", :last-verified "2026-07-25", :name-en "Micheál Martin", :unit "gov.irl", :role-en "Head of Government", :name-native "Mícheál Ó Máirtín", :official-url "https://www.ireland.ie/", :since "2025-01-23", :id "person.irl.head-of-government"}
 
@@ -371,6 +381,8 @@
 
   #:gov.person{:wikidata "Q3956186", :sourcing :authoritative, :unit-wikidata "Q38", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "ita", :last-verified "2026-07-25", :name-en "Sergio Mattarella", :unit "gov.ita", :role-en "Head of State", :official-url "https://www.governo.it/", :since "2015-02-03", :id "person.ita.head-of-state"}
 
+  #:gov.person{:wikidata "Q659163", :sourcing :authoritative, :unit-wikidata "Q1116000", :role-property "position-held", :provenance "wikidata", :jurisdiction "ita", :last-verified "2026-07-25", :name-en "Giancarlo Giorgetti", :unit "gov.ita.mef", :role-en "Italian Minister of Economy and Finance", :position-wikidata "Q28002382", :official-url "https://www.mef.gov.it/", :since "2022-10-22", :id "person.ita.mef.q28002382"}
+
   #:gov.person{:wikidata "Q505200", :sourcing :authoritative, :unit-wikidata "Q766", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "jam", :last-verified "2026-07-25", :name-en "Andrew Holness", :unit "gov.jam", :role-en "Head of Government", :official-url "https://www.gov.jm/", :id "person.jam.head-of-government"}
 
   #:gov.person{:wikidata "Q43274", :sourcing :authoritative, :unit-wikidata "Q766", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "jam", :last-verified "2026-07-25", :name-en "Charles III", :unit "gov.jam", :role-en "Head of State", :name-native "Charles III, King of the United Kingdom", :official-url "https://www.gov.jm/", :since "2022-09-08", :id "person.jam.head-of-state"}
@@ -384,6 +396,8 @@
   #:gov.person{:wikidata "Q1705028", :sourcing :authoritative, :unit-wikidata "Q17", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "jpn", :last-verified "2026-07-25", :name-en "Sanae Takaichi", :unit "gov.jpn", :role-en "Head of Government", :name-native "高市 早苗", :official-url "https://www.japan.go.jp/", :since "2025-10-21", :id "person.jpn.head-of-government"}
 
   #:gov.person{:wikidata "Q217096", :sourcing :authoritative, :unit-wikidata "Q17", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "jpn", :last-verified "2026-07-25", :name-en "Naruhito", :unit "gov.jpn", :role-en "Head of State", :name-native "徳仁", :official-url "https://www.japan.go.jp/", :since "2019-05-01", :id "person.jpn.head-of-state"}
+
+  #:gov.person{:wikidata "Q6378155", :sourcing :authoritative, :unit-wikidata "Q1322605", :role-property "position-held", :provenance "wikidata", :jurisdiction "jpn", :last-verified "2026-07-25", :name-en "Katsunobu Kato", :unit "gov.jpn.mof", :role-en "Minister of Finance", :name-native "加藤勝信", :position-wikidata "Q6500849", :official-url "https://www.mof.go.jp/", :since "2024-10-01", :id "person.jpn.mof.q6500849"}
 
   #:gov.person{:wikidata "Q261703", :sourcing :authoritative, :unit-wikidata "Q1490", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "jpn-13", :last-verified "2026-07-25", :name-en "Yuriko Koike", :unit "gov.jpn.pref.13", :role-en "Head of Government", :name-native "小池 百合子", :official-url "https://www.metro.tokyo.lg.jp/", :since "2016-08-02", :id "person.jpn.pref.13.head-of-government"}
 
@@ -520,6 +534,8 @@
   #:gov.person{:wikidata "Q116293030", :sourcing :authoritative, :unit-wikidata "Q826", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "mdv", :last-verified "2026-07-25", :name-en "Mohamed Muizzu", :unit "gov.mdv", :role-en "Head of Government", :name-native "މުޙައްމަދު މުޢިއްޒު", :official-url "https://visitmaldives.com/", :since "2023-11-17", :id "person.mdv.head-of-government"}
 
   #:gov.person{:wikidata "Q116293030", :sourcing :authoritative, :unit-wikidata "Q826", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "mdv", :last-verified "2026-07-25", :name-en "Mohamed Muizzu", :unit "gov.mdv", :role-en "Head of State", :name-native "މުޙައްމަދު މުޢިއްޒު", :official-url "https://visitmaldives.com/", :since "2023-11-17", :id "person.mdv.head-of-state"}
+
+  #:gov.person{:wikidata "Q7357736", :sourcing :authoritative, :unit-wikidata "Q1506364", :role-property "position-held", :provenance "wikidata", :jurisdiction "mex", :last-verified "2026-07-25", :name-en "Rogelio Ramírez de la O", :unit "gov.mex.shcp", :role-en "Secretary of Finance and Public Credit", :position-wikidata "Q52412845", :official-url "https://www.gob.mx/hacienda", :since "2021-07-16", :id "person.mex.shcp.q52412845"}
 
   #:gov.person{:wikidata "Q20090884", :sourcing :authoritative, :unit-wikidata "Q709", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "mhl", :last-verified "2026-07-25", :name-en "Hilda Heine", :unit "gov.mhl", :role-en "Head of Government", :official-url "https://rmigov.com/", :since "2024-01-03", :id "person.mhl.head-of-government"}
 
@@ -674,6 +690,8 @@
   #:gov.person{:wikidata "Q4298520", :sourcing :authoritative, :unit-wikidata "Q159", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "rus", :last-verified "2026-07-25", :name-en "Mikhail Mishustin", :unit "gov.rus", :role-en "Head of Government", :name-native "Михаил Владимирович Мишустин", :official-url "http://government.ru/", :since "2020-01-16", :id "person.rus.head-of-government"}
 
   #:gov.person{:wikidata "Q7747", :sourcing :authoritative, :unit-wikidata "Q159", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "rus", :last-verified "2026-07-25", :name-en "Vladimir Putin", :unit "gov.rus", :role-en "Head of State", :name-native "Владимир Владимирович Путин", :official-url "http://government.ru/", :since "2012-05-07", :id "person.rus.head-of-state"}
+
+  #:gov.person{:wikidata "Q589645", :sourcing :authoritative, :unit-wikidata "Q1958033", :role-property "position-held", :provenance "wikidata", :jurisdiction "rus", :last-verified "2026-07-25", :name-en "Anton Siluanov", :unit "gov.rus.minfin", :role-en "Minister of Finance", :name-native "Антон Германович Силуанов", :position-wikidata "Q107724511", :official-url "https://minfin.gov.ru/", :since "2011-09-27", :id "person.rus.minfin.q107724511"}
 
   #:gov.person{:wikidata "Q135454730", :sourcing :authoritative, :unit-wikidata "Q1037", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "rwa", :last-verified "2026-07-25", :name-en "Justin Nsengiyumva", :unit "gov.rwa", :role-en "Head of Government", :official-url "https://www.gov.rw/", :since "2025-07-25", :id "person.rwa.head-of-government"}
 
@@ -831,6 +849,10 @@
 
   #:gov.person{:wikidata "Q22686", :sourcing :authoritative, :unit-wikidata "Q30", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "usa", :last-verified "2026-07-25", :name-en "Donald Trump", :unit "gov.usa", :role-en "Head of State", :official-url "https://www.usa.gov/", :since "2025-01-20", :id "person.usa.head-of-state"}
 
+  #:gov.person{:wikidata "Q96101326", :sourcing :authoritative, :unit-wikidata "Q648666", :role-property "position-held", :provenance "wikidata", :jurisdiction "usa", :last-verified "2026-07-25", :name-en "Wally Adeyemo", :unit "gov.usa.treasury", :role-en "United States Deputy Secretary of the Treasury", :position-wikidata "Q11285124", :official-url "https://home.treasury.gov/", :since "2021-03-26", :id "person.usa.treasury.q11285124"}
+
+  #:gov.person{:wikidata "Q7435987", :sourcing :authoritative, :unit-wikidata "Q648666", :role-property "position-held", :provenance "wikidata", :jurisdiction "usa", :last-verified "2026-07-25", :name-en "Scott Bessent", :unit "gov.usa.treasury", :role-en "United States Secretary of the Treasury", :position-wikidata "Q4215834", :official-url "https://home.treasury.gov/", :since "2025-01-28", :id "person.usa.treasury.q4215834"}
+
   #:gov.person{:wikidata "Q28002959", :sourcing :authoritative, :unit-wikidata "Q265", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "uzb", :last-verified "2026-07-25", :name-en "Abdulla Aripov", :unit "gov.uzb", :role-en "Head of Government", :name-native "Abdulla Nigmatovich Aripov", :official-url "https://www.gov.uz/en", :since "2016-12-14", :id "person.uzb.head-of-government"}
 
   #:gov.person{:wikidata "Q57808", :sourcing :authoritative, :unit-wikidata "Q265", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "uzb", :last-verified "2026-07-25", :name-en "Shavkat Mirziyoyev", :unit "gov.uzb", :role-en "Head of State", :name-native "Shavkat Miromonovich Mirziyoyev", :official-url "https://www.gov.uz/en", :since "2016-09-08", :id "person.uzb.head-of-state"}
@@ -864,6 +886,8 @@
   #:gov.person{:wikidata "Q1148669", :sourcing :authoritative, :unit-wikidata "Q258", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "zaf", :last-verified "2026-07-25", :name-en "Cyril Ramaphosa", :unit "gov.zaf", :role-en "Head of Government", :name-native "Matamela Cyril Ramaphosa", :official-url "https://www.gov.za/", :since "2018-02-15", :id "person.zaf.head-of-government"}
 
   #:gov.person{:wikidata "Q1148669", :sourcing :authoritative, :unit-wikidata "Q258", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "zaf", :last-verified "2026-07-25", :name-en "Cyril Ramaphosa", :unit "gov.zaf", :role-en "Head of State", :name-native "Matamela Cyril Ramaphosa", :official-url "https://www.gov.za/", :since "2018-02-15", :id "person.zaf.head-of-state"}
+
+  #:gov.person{:wikidata "Q16746658", :sourcing :authoritative, :unit-wikidata "Q15261150", :role-property "position-held", :provenance "wikidata", :jurisdiction "zaf", :last-verified "2026-07-25", :name-en "Enoch Godongwana", :unit "gov.zaf.treasury", :role-en "Minister of Finance (South Africa)", :position-wikidata "Q2128581", :official-url "https://www.treasury.gov.za/", :since "2021-08-05", :id "person.zaf.treasury.q2128581"}
 
   #:gov.person{:wikidata "Q18352991", :sourcing :authoritative, :unit-wikidata "Q953", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "zmb", :last-verified "2026-07-25", :name-en "Edgar Lungu", :unit "gov.zmb", :role-en "Head of Government", :official-url "https://www.zamportal.gov.zm/", :id "person.zmb.head-of-government"}
 

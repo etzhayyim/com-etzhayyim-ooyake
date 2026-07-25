@@ -39,6 +39,40 @@ Owner instruction 2026-07-25 (「公人は記録して ok」/「charter から�
   and ministry heads thinly. That is a coverage gap to fill, never a claim that those
   offices are vacant.
 
+## 2026-07-25 (2) — office-holder coverage +46%, and a weekly refresh
+
+The first 公人 pull only asked "does this body point directly at a person?"
+(P35/P6/P488/P1037/P169/P1308). That is how Wikidata records heads of state, and
+almost nothing else — foreign/finance/defence ministries came back 61/389 covered
+and legislatures 31/186.
+
+**Pass B** now also asks the question the other way round: `position -P2389-> unit`,
+then `person -P39-> position`. That is the shape most ministers and speakers are
+actually stored in, and it carries the **real office title** ("Minister of Foreign
+Affairs") instead of the structural property name Pass A can offer ("Director / Head").
+
+- **718 → 1,050 holders across 461 → 761 units**, 197 jurisdictions. Core ministries
+  61 → 245 units covered (16% → 63%), central banks 70 → 105 (58% → 76%), legislatures
+  31 → 66 (19% → 35%). 445 rows now carry a real office title.
+- **Currency is decided differently in Pass B, on purpose.** P39 statements pile up
+  historical holders with no end date — Albania's foreign ministry had 20+ undated
+  predecessors — so "no end date = current" does not work there. Pass B requires a start
+  date and takes the latest per (unit, office); undated rows are not promoted to current
+  on a guess.
+- **Undated Pass A rows now lose to dated Pass B rows for the same unit.** Wikidata
+  leaves statements open when someone leaves office: France's economy ministry listed
+  Antoine Armand (out since Dec 2024) beside his correct successor Éric Lombard. The
+  stale row is dropped; the dated one stands.
+- `.github/workflows/refresh-officeholders.yml` re-reads every holder weekly and commits.
+  Who holds an office is a fact that changes on a scale of days — the UK
+  head-of-government row was five days old at first pull — so `:gov.person/last-verified`
+  is only meaningful if something re-takes the reading. The job fails rather than commits
+  when a group's count collapses (upstream outage must not land as "these offices are
+  vacant") or when the G6 / linkage / provenance gate fails, so the charter boundary is
+  enforced on every automated write and not only when a human looks.
+- Still honest about the remainder: 1,050 holders against 7,089 atlas units. Courts
+  (19/62) and oversight bodies (78/327) stay thin because Wikidata is thin there.
+
 ## 2026-06-05 — cross-actor world-model reconcile (ooyake↔tsumugi)
 
 The atlas was a structural SSoT that *other* actors consumed, but nothing actually

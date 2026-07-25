@@ -84,8 +84,57 @@
    "chief-executive" "Chief Executive"
    "officeholder"    "Officeholder"})
 
+(def min-retained-ratio
+  "回帰ガード（ADR-2607253200）。既存ファイルの件数に対してこの割合を下回る結果しか
+  得られなかったら、そのグループは **書き戻さずに失敗する**。
+
+  毎週 CI から無人で回す以上、一番危ないのは『WDQS の一時障害や SPARQL の書き間違いで
+  結果が空に近くなり、1,000件の公人が一斉に消えて commit される』こと。1回の実行結果は
+  測定値だが、測定装置の故障まで測定値として書き込んではいけない。個々の在任者が
+  入れ替わるのは正常な変動なので通し、グループ全体が崩れたときだけ止める。
+  OOYAKE_FETCH_MIN_RETAINED で上書き可（0 で無効。初回生成時は既存が0件なので素通り）。"
+  (js/parseFloat (or (.. js/process -env -OOYAKE_FETCH_MIN_RETAINED) "0.7")))
+
 (defn- read-units [file]
   (:units (edn/read-string (str (.readFileSync fs (str "registry/" file) "utf8")))))
+
+(defn- existing-count [path]
+  (try
+    (count (:people (edn/read-string (str (.readFileSync fs path "utf8")))))
+    (catch :default _ 0)))
+
+(defn- sparql-positions
+  "PASS B（ADR-2607253200）— 役職エンティティ経由で現職を引く。
+
+  Pass A（下の `sparql`）は組織 → 人物の直リンク（P35/P6/P488/P1037…）だけを見るので、
+  Wikidata がその形で持っていない組織を丸ごと取りこぼす。実測: 外務・財務・国防省は
+  389 組織中 61 しか取れず、議会は 186 中 31 だった。実際には多くの閣僚・議長は
+  『人物 → P39 → 役職 → P2389 → 組織』という形で入っている。
+
+  副産物として **役職の実名が取れる**（\"Minister of Foreign Affairs\"）。Pass A は
+  結んだ property 名しか分からず \"Director / Head\" のような構造的ラベルになる。
+
+  現職判定が Pass A と違う点: **P580（就任日）を必須にし、(組織, 役職) ごとに最新を
+  採る**。P39 は歴代の在任者が終了日なしで大量に残っていることが多く（実測: アルバニア
+  外務省に終了日なしの歴代大臣が20名以上、うち日付を持つ最新が現職の Ferit Hoxha
+  2026-03-05）、『終了日が無い＝現職』という Pass A の判定はここでは通用しない。
+  日付を持たない行は現職の証拠にならないので落とす — 推測で現職に昇格させない。"
+  [qids]
+  (str "SELECT ?unit ?position ?positionLabel ?person ?personLabel ?native ?start WHERE {\n"
+       "  VALUES ?unit { " (str/join " " (map #(str "wd:" %) qids)) " }\n"
+       ;; P2389 = organisation directed by this office。P361(part of)/P1001(applies to
+       ;; jurisdiction) も繋がるが、前者は組織の下部組織、後者は国そのものを指すので
+       ;; 「この組織の長」以外を大量に拾う。精度を優先して P2389 のみ。
+       "  ?position wdt:P2389 ?unit .\n"
+       "  ?person p:P39 ?st .\n"
+       "  ?st ps:P39 ?position .\n"
+       "  ?person wdt:P31 wd:Q5 .\n"
+       "  FILTER NOT EXISTS { ?st pq:P582 ?endTime }\n"
+       "  FILTER NOT EXISTS { ?st wikibase:rank wikibase:DeprecatedRank }\n"
+       "  ?st pq:P580 ?start .\n"
+       "  OPTIONAL { ?person wdt:P1559 ?native }\n"
+       "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n"
+       "}"))
 
 (defn- sparql [qids]
   (str "SELECT ?unit ?prop ?person ?personLabel ?native ?start WHERE {\n"
@@ -109,13 +158,13 @@
        "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n"
        "}"))
 
-(defn- query! [qids]
+(defn- query! [query-fn qids]
   (-> (js/fetch endpoint
                 #js {:method "POST"
                      :headers #js {"User-Agent" user-agent
                                    "Accept" "application/sparql-results+json"
                                    "Content-Type" "application/x-www-form-urlencoded"}
-                     :body (str "query=" (js/encodeURIComponent (sparql qids)))})
+                     :body (str "query=" (js/encodeURIComponent (query-fn qids)))})
       (.then (fn [resp]
                (if (.-ok resp)
                  (.then (.json resp) (fn [j] {:rows (js->clj (.. j -results -bindings) :keywordize-keys true)}))
@@ -158,6 +207,80 @@
         (and native (not= native label)) (assoc :gov.person/name-native native)
         start (assoc :gov.person/since (subs start 0 10))
         (:gov.unit/official-url unit) (assoc :gov.person/official-url (:gov.unit/official-url unit))))))
+
+(defn- ->person-from-position
+  "PASS B の 1 row → :gov.person/* エンティティ。Pass A との違いは2点だけ:
+  `:gov.person/role-en` が役職の**実名**（\"Minister of Foreign Affairs\"）になり、
+  id を役職 QID で作る。id を役職ラベルから作らないのは、上流がラベルを直したときに
+  週次 refresh の diff が id 変更で埋まるから — QID なら在任者が替わっても id は不変で、
+  『同じ職の担当者が替わった』という1行の diff になる。"
+  [by-qid row]
+  (let [unit-qid (qid-of (get-in row [:unit :value]))
+        unit (get by-qid unit-qid)
+        position-qid (qid-of (get-in row [:position :value]))
+        position-label (get-in row [:positionLabel :value])
+        person-qid (qid-of (get-in row [:person :value]))
+        label (get-in row [:personLabel :value])
+        native (get-in row [:native :value])
+        start (get-in row [:start :value])]
+    (when (and unit label (not (re-matches #"Q\d+" label)))
+      (cond-> {:gov.person/id (str "person."
+                                   (str/replace (:gov.unit/id unit) #"^gov\." "")
+                                   "." (str/lower-case position-qid))
+               :gov.person/unit (:gov.unit/id unit)
+               :gov.person/jurisdiction (:gov.unit/jurisdiction unit)
+               :gov.person/role-en (if (re-matches #"Q\d+" (str position-label))
+                                     "Officeholder"
+                                     position-label)
+               :gov.person/role-property "position-held"
+               :gov.person/position-wikidata position-qid
+               :gov.person/name-en label
+               :gov.person/wikidata person-qid
+               :gov.person/unit-wikidata unit-qid
+               :gov.person/sourcing :authoritative
+               :gov.person/provenance "wikidata"
+               :gov.person/last-verified (today)
+               :gov.person/since (subs start 0 10)}
+        (and native (not= native label)) (assoc :gov.person/name-native native)
+        (:gov.unit/official-url unit) (assoc :gov.person/official-url (:gov.unit/official-url unit))))))
+
+(defn- current-per-position
+  "PASS B の現職判定。(組織, 役職) ごとに **就任日が最新の1件**だけを残す。
+
+  P39 は終了日を書かないまま歴代の在任者が積み上がるのが普通なので、Pass A の
+  『終了日が無い＝現職』はここでは効かない。クエリ側で就任日を必須にしたうえで、
+  ここで最新を採る。同着（同日就任の共同ポスト）は両方残す。"
+  [people]
+  (->> people
+       (group-by (juxt :gov.person/unit :gov.person/position-wikidata))
+       (mapcat (fn [[_ group]]
+                 (let [latest (apply max-key identity (map :gov.person/since group))]
+                   (filter #(= latest (:gov.person/since %)) group))))
+       vec))
+
+(defn- merge-passes
+  "Pass A と Pass B を束ねる。2つの規則。
+
+  (1) **同じ (組織, 人物) が両方に出たら Pass B を採る** — Pass B の方が役職の実名を
+  持っているため（\"Prime Minister of France\" 対 \"Director / Head\"）。
+
+  (2) **日付を持たない Pass A の行は、同じ組織に日付つきの Pass B 行があるなら落とす。**
+  Pass A の現職判定は『終了日が無い＝現職』だが、Wikidata では退任時に終了日を書き
+  忘れた statement がそのまま残る。実測: フランス経済・財務省に Antoine Armand
+  （2024年12月に退任）が日付なしで残り、正しい後任 Éric Lombard（2024-12-23 就任）と
+  並んでいた。日付が無く、かつ同じ組織に日付つきの在職者が居るなら、前者は現職の
+  証拠として後者に負ける。日付つきの Pass A 行、および Pass B が触れていない組織の
+  行はそのまま残す（P35 元首のように役職エンティティを経由しない形は Pass B では
+  構造的に取れないため、落としてはいけない）。"
+  [pass-a pass-b]
+  (let [b-keys (into #{} (map (juxt :gov.person/unit :gov.person/wikidata) pass-b))
+        b-units-dated (into #{} (map :gov.person/unit (filter :gov.person/since pass-b)))]
+    (into (vec pass-b)
+          (remove (fn [a]
+                    (or (contains? b-keys ((juxt :gov.person/unit :gov.person/wikidata) a))
+                        (and (nil? (:gov.person/since a))
+                             (contains? b-units-dated (:gov.person/unit a)))))
+                  pass-a))))
 
 (defn- dedupe-ids
   "2段階。
@@ -207,32 +330,62 @@
         batches (partition-all batch-size (map :gov.unit/wikidata with-qid))]
     (println (str "\n[" out "] " (count units) " units, " (count with-qid) " with QID, "
                   (count batches) " batches"))
-    (letfn [(step [remaining acc n-err]
-              (if (empty? remaining)
-                (js/Promise.resolve [acc n-err])
-                (-> (query! (first remaining))
-                    (.then (fn [{:keys [rows error]}]
-                             (if error
-                               (do (println (str "  batch " (- (count batches) (count remaining) -1)
-                                                 "/" (count batches) " FAILED: " error))
-                                   (-> (sleep inter-batch-delay-ms)
-                                       (.then #(step (rest remaining) acc (inc n-err)))))
-                               (let [people (keep #(->person by-qid %) rows)]
-                                 (println (str "  batch " (- (count batches) (count remaining) -1)
-                                               "/" (count batches) " → " (count people) " officeholder(s)"))
-                                 (-> (sleep inter-batch-delay-ms)
-                                     (.then #(step (rest remaining) (into acc people) n-err))))))))))]
-      (-> (step (vec batches) [] 0)
-          (.then (fn [[people n-err]]
-                   (let [final (dedupe-ids people)
-                         path (str "registry/gov-officeholders." out ".edn")]
-                     (println (str "[" out "] " (count final) " officeholders across "
-                                   (count (distinct (map :gov.person/unit final))) " units"
-                                   (when (pos? n-err) (str "; " n-err " batch(es) failed"))))
-                     (when-not dry-run?
-                       (.writeFileSync fs path (render out final files))
-                       (println (str "[" out "] wrote " path)))
-                     {:out out :n (count final) :errors n-err})))))))
+    (letfn [(run-pass [label query-fn row->person]
+              (letfn [(step [remaining acc n-err]
+                        (if (empty? remaining)
+                          (js/Promise.resolve [acc n-err])
+                          (-> (query! query-fn (first remaining))
+                              (.then (fn [{:keys [rows error]}]
+                                       (if error
+                                         (do (println (str "  " label " batch "
+                                                           (- (count batches) (count remaining) -1)
+                                                           "/" (count batches) " FAILED: " error))
+                                             (-> (sleep inter-batch-delay-ms)
+                                                 (.then #(step (rest remaining) acc (inc n-err)))))
+                                         (let [people (keep #(row->person by-qid %) rows)]
+                                           (println (str "  " label " batch "
+                                                         (- (count batches) (count remaining) -1)
+                                                         "/" (count batches) " → " (count people) " row(s)"))
+                                           (-> (sleep inter-batch-delay-ms)
+                                               (.then #(step (rest remaining) (into acc people) n-err))))))))))]
+                (step (vec batches) [] 0)))]
+      (-> (run-pass "A(direct)  " sparql ->person)
+          (.then (fn [[pass-a err-a]]
+                   (-> (run-pass "B(position)" sparql-positions ->person-from-position)
+                       (.then (fn [[pass-b-raw err-b]]
+                                (let [pass-b (current-per-position pass-b-raw)
+                                      final (dedupe-ids (merge-passes pass-a pass-b))
+                                      path (str "registry/gov-officeholders." out ".edn")]
+                                  (println (str "[" out "] " (count final) " officeholders across "
+                                                (count (distinct (map :gov.person/unit final))) " units"
+                                                " (A " (count pass-a) " + B " (count pass-b)
+                                                " of " (count pass-b-raw) " dated position rows)"
+                                                (when (pos? (+ err-a err-b))
+                                                  (str "; " (+ err-a err-b) " batch(es) failed"))))
+                                  (let [prev (existing-count path)
+                                        collapsed? (and (pos? min-retained-ratio)
+                                                        (pos? prev)
+                                                        (< (count final) (* min-retained-ratio prev)))]
+                                    (cond
+                                      dry-run? nil
+
+                                      collapsed?
+                                      (do (println (str "[" out "] REFUSED to write: " prev " → "
+                                                        (count final) " (< "
+                                                        (Math/round (* 100 min-retained-ratio))
+                                                        "% retained). A whole group emptying out is an"
+                                                        " upstream/query failure far more often than that"
+                                                        " many offices falling vacant at once, and this run"
+                                                        " will not record a broken probe as a finding."
+                                                        " Set OOYAKE_FETCH_MIN_RETAINED=0 to override"
+                                                        " deliberately."))
+                                          (.exit js/process 1))
+
+                                      :else
+                                      (do (.writeFileSync fs path (render out final files))
+                                          (println (str "[" out "] wrote " path
+                                                        (when (pos? prev) (str " (was " prev ")"))))))
+                                    {:out out :n (count final) :errors (+ err-a err-b)})))))))))))
 
 (defn -main []
   (let [targets (if only-group (filter #(= only-group (:out %)) groups) groups)]

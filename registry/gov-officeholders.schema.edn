@@ -37,7 +37,9 @@
   {:db/ident :gov.person/role-en        :db/valueType :db.type/string  :db/cardinality :db.cardinality/one
    :db/doc "役職。人物と組織を結んだ Wikidata property から導出した構造的関係名で、自由記述の肩書きではない（何が根拠かがそのまま読める形にしてある）。"}
   {:db/ident :gov.person/role-property  :db/valueType :db.type/string  :db/cardinality :db.cardinality/one
-   :db/doc "role-en の根拠になった生の property slug。役職主張そのものの provenance。"}
+   :db/doc "role-en の根拠になった生の property slug。役職主張そのものの provenance。\"position-held\" は役職エンティティ経由（Pass B）で取れた行を意味し、その場合だけ role-en が実タイトルになる。"}
+  {:db/ident :gov.person/position-wikidata :db/valueType :db.type/string :db/cardinality :db.cardinality/one
+   :db/doc "役職エンティティの QID（Pass B のみ）。id をこれで作るので、上流がラベルを直しても id は変わらず、在任者が替わったときだけ diff が出る。"}
   {:db/ident :gov.person/name-en        :db/valueType :db.type/string  :db/cardinality :db.cardinality/one}
   {:db/ident :gov.person/name-native    :db/valueType :db.type/string  :db/cardinality :db.cardinality/one}
   {:db/ident :gov.person/since          :db/valueType :db.type/string  :db/cardinality :db.cardinality/one
