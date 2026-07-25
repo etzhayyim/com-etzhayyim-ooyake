@@ -1,0 +1,176 @@
+;; ooyake 公 — gov-officeholders.centralbanks.edn — 現職の公職者（公人）。自動生成、手編集しない。
+;; 生成: nbb scripts/fetch_officeholders.cljs centralbanks   (2026-07-25)
+;; 出典: Wikidata（P35 元首 / P6 政府首脳 / P488 議長 / P1037 長 / P169 CEO /
+;;       P1308 現職者）。P582(終了日) を持つ statement と deprecated rank は除外
+;;       済み＝取得時点の現職のみ。:gov.person/last-verified がその取得日。
+;; 主キー: 既存 registry の :gov.unit/wikidata。したがって :gov.person/unit は
+;;       常に実在の :gov.unit/id を指す（名寄せ不要）。入力: gov-units.world-centralbanks.edn
+;;
+;; G6（2026-07-25 改訂）: 公職としての役職・氏名・在任開始・公式URL のみ。生年月日・
+;; 出生地・家族・私的連絡先・住所・政党はクエリに含めていない（捨てているのではなく
+;; 要求していない）。G10 civic-wayfinding-never-a-target-list は不変。
+;; G11 politically neutral: 記録するのは『誰がその職に就いているか』だけで、評価・
+;; ランキング・スコアは持たない。
+
+{:graph {:name "gov-atlas-v1" :visibility :public}
+
+ :people
+ [#:gov.person{:wikidata "Q25431416", :sourcing :authoritative, :unit-wikidata "Q31211", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ago", :last-verified "2026-07-25", :name-en "Valter Filipe Duarte da Silva", :unit "gov.ago.central-bank", :role-en "Chairperson", :official-url "http://www.bna.ao/", :since "2016-03-01", :id "person.ago.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q21073125", :sourcing :authoritative, :unit-wikidata "Q806714", :role-property "chairperson", :provenance "wikidata", :jurisdiction "alb", :last-verified "2026-07-25", :name-en "Gent Sejko", :unit "gov.alb.central-bank", :role-en "Chairperson", :official-url "https://www.bankofalbania.org/home/", :id "person.alb.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q1584620", :sourcing :authoritative, :unit-wikidata "Q670723", :role-property "chairperson", :provenance "wikidata", :jurisdiction "aut", :last-verified "2026-07-25", :name-en "Harald Mahrer", :unit "gov.aut.central-bank", :role-en "Chairperson", :official-url "https://www.oenb.at/", :since "2019-09-01", :id "person.aut.central-bank.chairperson.1"}
+
+  #:gov.person{:wikidata "Q18222522", :sourcing :authoritative, :unit-wikidata "Q670723", :role-property "chairperson", :provenance "wikidata", :jurisdiction "aut", :last-verified "2026-07-25", :name-en "Martin Kocher", :unit "gov.aut.central-bank", :role-en "Chairperson", :official-url "https://www.oenb.at/", :since "2025-09-01", :id "person.aut.central-bank.chairperson.2"}
+
+  #:gov.person{:wikidata "Q108823069", :sourcing :authoritative, :unit-wikidata "Q190230", :role-property "chairperson", :provenance "wikidata", :jurisdiction "aze", :last-verified "2026-07-25", :name-en "Taleh Kazimov", :unit "gov.aze.central-bank", :role-en "Chairperson", :name-native "Taleh Kazımov", :official-url "http://www.cbar.az/", :since "2022-01-01", :id "person.aze.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q100146368", :sourcing :authoritative, :unit-wikidata "Q620942", :role-property "chairperson", :provenance "wikidata", :jurisdiction "waemu", :last-verified "2026-07-25", :name-en "Jean-Claude Kassi Brou", :unit "gov.bceao", :role-en "Chairperson", :official-url "http://www.bceao.int/", :since "2022-06-07", :id "person.bceao.chairperson"}
+
+  #:gov.person{:wikidata "Q25431475", :sourcing :authoritative, :unit-wikidata "Q806937", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bdi", :last-verified "2026-07-25", :name-en "Jean Ciza", :unit "gov.bdi.central-bank", :role-en "Chairperson", :official-url "http://www.brb.bi/", :id "person.bdi.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q17711819", :sourcing :authoritative, :unit-wikidata "Q189972", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cemac", :last-verified "2026-07-25", :name-en "Lucas Abaga Nchama", :unit "gov.beac", :role-en "Chairperson", :official-url "https://www.beac.int", :id "person.beac.chairperson"}
+
+  #:gov.person{:wikidata "Q64157205", :sourcing :authoritative, :unit-wikidata "Q685918", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Pierre Wunsch", :unit "gov.bel.central-bank", :role-en "Chairperson", :official-url "https://www.nbb.be", :since "2019-01-01", :id "person.bel.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q25431484", :sourcing :authoritative, :unit-wikidata "Q74687", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bgr", :last-verified "2026-07-25", :name-en "Dimitar Radev", :unit "gov.bgr.central-bank", :role-en "Chairperson", :official-url "http://www.bnb.bg/", :id "person.bgr.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q18647517", :sourcing :authoritative, :unit-wikidata "Q571182", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bhr", :last-verified "2026-07-25", :name-en "Rasheed Mohammed Al Maraj", :unit "gov.bhr.central-bank", :role-en "Chairperson", :official-url "http://www.cbb.gov.bh", :id "person.bhr.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q25431474", :sourcing :authoritative, :unit-wikidata "Q4504270", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bhs", :last-verified "2026-07-25", :name-en "John A. Rolle", :unit "gov.bhs.central-bank", :role-en "Chairperson", :official-url "http://www.centralbankbahamas.com/", :id "person.bhs.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q25431462", :sourcing :authoritative, :unit-wikidata "Q1184535", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bih", :last-verified "2026-07-25", :name-en "Senad Softić", :unit "gov.bih.central-bank", :role-en "Chairperson", :official-url "https://www.cbbh.ba/", :id "person.bih.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q18710422", :sourcing :authoritative, :unit-wikidata "Q431491", :role-property "chairperson", :provenance "wikidata", :jurisdiction "blr", :last-verified "2026-07-25", :name-en "Paval Kalaur", :unit "gov.blr.central-bank", :role-en "Chairperson", :name-native "Павaл Уладзімeравіч Калаур", :official-url "http://www.nbrb.by/", :id "person.blr.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q18978033", :sourcing :authoritative, :unit-wikidata "Q643949", :role-property "chairperson", :provenance "wikidata", :jurisdiction "blz", :last-verified "2026-07-25", :name-en "Joy Grant", :unit "gov.blz.central-bank", :role-en "Chairperson", :official-url "http://www.centralbank.org.bz", :id "person.blz.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q431442", :sourcing :authoritative, :unit-wikidata "Q2604419", :role-property "chairperson", :provenance "wikidata", :jurisdiction "brn", :last-verified "2026-07-25", :name-en "Al-Muhtadee Billah, Crown Prince of Brunei", :unit "gov.brn.central-bank", :role-en "Chairperson", :name-native "المهتدي بالله البلقيه", :official-url "http://www.ambd.gov.bn", :id "person.brn.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q2425188", :sourcing :authoritative, :unit-wikidata "Q597394", :role-property "chairperson", :provenance "wikidata", :jurisdiction "che", :last-verified "2026-07-25", :name-en "Thomas Jordan", :unit "gov.che.central-bank", :role-en "Chairperson", :official-url "https://www.snb.ch/", :id "person.che.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q6112329", :sourcing :authoritative, :unit-wikidata "Q2631674", :role-property "chairperson", :provenance "wikidata", :jurisdiction "chl", :last-verified "2026-07-25", :name-en "Rosanna Costa", :unit "gov.chl.central-bank", :role-en "Chairperson", :official-url "http://www.bcentral.cl/", :id "person.chl.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q28028561", :sourcing :authoritative, :unit-wikidata "Q686329", :role-property "chairperson", :provenance "wikidata", :jurisdiction "col", :last-verified "2026-07-25", :name-en "Juan José Echavarría", :unit "gov.col.central-bank", :role-en "Chairperson", :official-url "https://www.banrep.gov.co", :id "person.col.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q56987421", :sourcing :authoritative, :unit-wikidata "Q251062", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cze", :last-verified "2026-07-25", :name-en "Aleš Michl", :unit "gov.cze.central-bank", :role-en "Chairperson", :official-url "https://www.cnb.cz/", :since "2022-07-01", :id "person.cze.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q11976472", :sourcing :authoritative, :unit-wikidata "Q1800406", :role-property "chairperson", :provenance "wikidata", :jurisdiction "dom", :last-verified "2026-07-25", :name-en "Héctor Valdez Albizu", :unit "gov.dom.central-bank", :role-en "Chairperson", :official-url "https://www.bancentral.gov.do/", :id "person.dom.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q23928324", :sourcing :authoritative, :unit-wikidata "Q1210260", :role-property "chairperson", :provenance "wikidata", :jurisdiction "eccu", :last-verified "2026-07-25", :name-en "Timothy Antoine", :unit "gov.eccb", :role-en "Chairperson", :official-url "http://www.eccb-centralbank.org", :id "person.eccb.chairperson"}
+
+  #:gov.person{:wikidata "Q16193623", :sourcing :authoritative, :unit-wikidata "Q920699", :role-property "chairperson", :provenance "wikidata", :jurisdiction "egy", :last-verified "2026-07-25", :name-en "Hassan Abdullah", :unit "gov.egy.central-bank", :role-en "Chairperson", :official-url "https://www.cbe.org.eg/", :since "2022-08-18", :id "person.egy.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q115793592", :sourcing :authoritative, :unit-wikidata "Q1967889", :role-property "chairperson", :provenance "wikidata", :jurisdiction "eth", :last-verified "2026-07-25", :name-en "Eyob Tekalign Tolina", :unit "gov.eth.central-bank", :role-en "Chairperson", :official-url "https://nbe.gov.et/", :since "2025-01-01", :id "person.eth.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q30061296", :sourcing :authoritative, :unit-wikidata "Q669484", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "gha", :last-verified "2026-07-25", :name-en "Ernest Addison", :unit "gov.gha.central-bank", :role-en "Head of Government", :official-url "http://www.bog.gov.gh/", :id "person.gha.central-bank.head-of-government"}
+
+  #:gov.person{:wikidata "Q715468", :sourcing :authoritative, :unit-wikidata "Q806700", :role-property "chairperson", :provenance "wikidata", :jurisdiction "grc", :last-verified "2026-07-25", :name-en "Yannis Stournaras", :unit "gov.grc.central-bank", :role-en "Chairperson", :name-native "Γιάννης Στουρνάρας", :official-url "https://www.bankofgreece.gr", :since "2014-06-20", :id "person.grc.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q715468", :sourcing :authoritative, :unit-wikidata "Q806700", :role-property "director", :provenance "wikidata", :jurisdiction "grc", :last-verified "2026-07-25", :name-en "Yannis Stournaras", :unit "gov.grc.central-bank", :role-en "Director / Head", :name-native "Γιάννης Στουρνάρας", :official-url "https://www.bankofgreece.gr", :since "2014-06-26", :id "person.grc.central-bank.director"}
+
+  #:gov.person{:wikidata "Q110184164", :sourcing :authoritative, :unit-wikidata "Q3359424", :role-property "chairperson", :provenance "wikidata", :jurisdiction "gtm", :last-verified "2026-07-25", :name-en "Álvaro González Ricci", :unit "gov.gtm.central-bank", :role-en "Chairperson", :official-url "http://www.banguat.gob.gt", :since "2022-10-01", :id "person.gtm.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q26990387", :sourcing :authoritative, :unit-wikidata "Q2920146", :role-property "chairperson", :provenance "wikidata", :jurisdiction "hnd", :last-verified "2026-07-25", :name-en "Wilfredo Cerrato", :unit "gov.hnd.central-bank", :role-en "Chairperson", :official-url "http://www.bch.hn/", :id "person.hnd.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q12628155", :sourcing :authoritative, :unit-wikidata "Q1143457", :role-property "chairperson", :provenance "wikidata", :jurisdiction "hrv", :last-verified "2026-07-25", :name-en "Boris Vujčić", :unit "gov.hrv.central-bank", :role-en "Chairperson", :official-url "https://www.hnb.hr", :since "2012-07-08", :id "person.hrv.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q1401791", :sourcing :authoritative, :unit-wikidata "Q774636", :role-property "chairperson", :provenance "wikidata", :jurisdiction "hun", :last-verified "2026-07-25", :name-en "Mihály Varga", :unit "gov.hun.central-bank", :role-en "Chairperson", :name-native "Varga Mihály", :official-url "https://www.mnb.hu/", :since "2025-03-04", :id "person.hun.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q75186229", :sourcing :authoritative, :unit-wikidata "Q283785", :role-property "chairperson", :provenance "wikidata", :jurisdiction "irl", :last-verified "2026-07-25", :name-en "Gabriel Makhlouf", :unit "gov.irl.central-bank", :role-en "Chairperson", :official-url "https://www.centralbank.ie/", :since "2019-09-01", :id "person.irl.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q463259", :sourcing :authoritative, :unit-wikidata "Q1195916", :role-property "chairperson", :provenance "wikidata", :jurisdiction "isl", :last-verified "2026-07-25", :name-en "Mar Guðmundsson", :unit "gov.isl.central-bank", :role-en "Chairperson", :official-url "https://www.sedlabanki.is/", :id "person.isl.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q41800340", :sourcing :authoritative, :unit-wikidata "Q244411", :role-property "chairperson", :provenance "wikidata", :jurisdiction "isr", :last-verified "2026-07-25", :name-en "Amir Yaron", :unit "gov.isr.central-bank", :role-en "Chairperson", :official-url "https://www.boi.org.il/", :since "2018-12-24", :id "person.isr.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q4965702", :sourcing :authoritative, :unit-wikidata "Q3374585", :role-property "chairperson", :provenance "wikidata", :jurisdiction "jam", :last-verified "2026-07-25", :name-en "Brian Wynter", :unit "gov.jam.central-bank", :role-en "Chairperson", :official-url "http://www.boj.org.jm", :since "2009-11-23", :id "person.jam.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q4167136", :sourcing :authoritative, :unit-wikidata "Q2472280", :role-property "chairperson", :provenance "wikidata", :jurisdiction "kaz", :last-verified "2026-07-25", :name-en "Erbolat Dosaev", :unit "gov.kaz.central-bank", :role-en "Chairperson", :name-native "Ерболат Асқарбекұлы Досаев", :official-url "http://www.nationalbank.kz", :id "person.kaz.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q107051348", :sourcing :authoritative, :unit-wikidata "Q1776564", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lbn", :last-verified "2026-07-25", :name-en "Wāsīm mnṣūrī", :unit "gov.lbn.central-bank", :role-en "Chairperson", :official-url "http://www.bdl.gov.lb/", :id "person.lbn.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q62011627", :sourcing :authoritative, :unit-wikidata "Q2899684", :role-property "director", :provenance "wikidata", :jurisdiction "lbr", :last-verified "2026-07-25", :name-en "Nathaniel R. Patray", :unit "gov.lbr.central-bank", :role-en "Director / Head", :official-url "http://www.cbl.org.lr/index.php", :id "person.lbr.central-bank.director"}
+
+  #:gov.person{:wikidata "Q134786386", :sourcing :authoritative, :unit-wikidata "Q58234", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lby", :last-verified "2026-07-25", :name-en "Naji Mohamed Issa Belqasem", :unit "gov.lby.central-bank", :role-en "Chairperson", :official-url "http://cbl.gov.ly", :id "person.lby.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q6026889", :sourcing :authoritative, :unit-wikidata "Q2640939", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lka", :last-verified "2026-07-25", :name-en "Indrajit Coomaraswamy", :unit "gov.lka.central-bank", :role-en "Chairperson", :official-url "https://www.cbsl.gov.lk/", :since "2016-07-02", :id "person.lka.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q109496885", :sourcing :authoritative, :unit-wikidata "Q616849", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ltu", :last-verified "2026-07-25", :name-en "Gediminas Šimkus", :unit "gov.ltu.central-bank", :role-en "Chairperson", :official-url "http://www.lb.lt", :since "2021-01-01", :id "person.ltu.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q78191477", :sourcing :authoritative, :unit-wikidata "Q687709", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lva", :last-verified "2026-07-25", :name-en "Mārtiņš Kazāks", :unit "gov.lva.central-bank", :role-en "Chairperson", :official-url "https://www.bank.lv/", :id "person.lva.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q11956778", :sourcing :authoritative, :unit-wikidata "Q328198", :role-property "chairperson", :provenance "wikidata", :jurisdiction "mar", :last-verified "2026-07-25", :name-en "Abdellatif Jouahri", :unit "gov.mar.central-bank", :role-en "Chairperson", :official-url "https://www.bkam.ma/", :since "2003-01-01", :id "person.mar.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q109951850", :sourcing :authoritative, :unit-wikidata "Q3363703", :role-property "director", :provenance "wikidata", :jurisdiction "moz", :last-verified "2026-07-25", :name-en "Rogério Zandamela", :unit "gov.moz.central-bank", :role-en "Director / Head", :official-url "http://www.bancomoc.mz/Default_en.aspx", :since "2016-09-01", :id "person.moz.central-bank.director"}
+
+  #:gov.person{:wikidata "Q127889656", :sourcing :authoritative, :unit-wikidata "Q806646", :role-property "chairperson", :provenance "wikidata", :jurisdiction "mys", :last-verified "2026-07-25", :name-en "Shaik Abdul Rasheed Abdul Ghaffour", :unit "gov.mys.central-bank", :role-en "Chairperson", :official-url "http://www.bnm.gov.my/", :since "2023-07-01", :id "person.mys.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q139807332", :sourcing :authoritative, :unit-wikidata "Q806684", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nam", :last-verified "2026-07-25", :name-en "Ebson Uanguta", :unit "gov.nam.central-bank", :role-en "Chairperson", :official-url "https://www.bon.com.na/", :since "2026-01-01", :id "person.nam.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q118903030", :sourcing :authoritative, :unit-wikidata "Q1627120", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nga", :last-verified "2026-07-25", :name-en "Olayemi Cardoso", :unit "gov.nga.central-bank", :role-en "Chairperson", :official-url "http://www.cbn.gov.ng/", :since "2023-01-01", :id "person.nga.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q110126862", :sourcing :authoritative, :unit-wikidata "Q970769", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nor", :last-verified "2026-07-25", :name-en "Ida Wolden Bache", :unit "gov.nor.central-bank", :role-en "Chairperson", :official-url "https://www.norges-bank.no/en/", :since "2022-03-01", :id "person.nor.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q134522916", :sourcing :authoritative, :unit-wikidata "Q1318435", :role-property "chairperson", :provenance "wikidata", :jurisdiction "npl", :last-verified "2026-07-25", :name-en "Biswo Nath Poudel", :unit "gov.npl.central-bank", :role-en "Chairperson", :official-url "http://www.nrb.org.np/", :since "2025-05-20", :id "person.npl.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q109550782", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Adrian Orr", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "2018-03-27", :id "person.nzl.central-bank.chairperson.1"}
+
+  #:gov.person{:wikidata "Q1238979", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Don Brash", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "1988-09-01", :id "person.nzl.central-bank.chairperson.2"}
+
+  #:gov.person{:wikidata "Q16151548", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Graeme Wheeler", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "2012-09-26", :id "person.nzl.central-bank.chairperson.3"}
+
+  #:gov.person{:wikidata "Q20737547", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Alan Low", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "1967-07-21", :id "person.nzl.central-bank.chairperson.4"}
+
+  #:gov.person{:wikidata "Q4706207", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Alan Bollard", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "2002-09-23", :id "person.nzl.central-bank.chairperson.5"}
+
+  #:gov.person{:wikidata "Q5721902", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Henry George Lang", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "1973-09-01", :id "person.nzl.central-bank.chairperson.6"}
+
+  #:gov.person{:wikidata "Q74019779", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Anna Breman", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "2025-12-01", :id "person.nzl.central-bank.chairperson.7"}
+
+  #:gov.person{:wikidata "Q96072017", :sourcing :authoritative, :unit-wikidata "Q1494550", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nzl", :last-verified "2026-07-25", :name-en "Spencer Russell", :unit "gov.nzl.central-bank", :role-en "Chairperson", :official-url "https://www.rbnz.govt.nz/", :since "1984-05-18", :id "person.nzl.central-bank.chairperson.8"}
+
+  #:gov.person{:wikidata "Q35525609", :sourcing :authoritative, :unit-wikidata "Q1323248", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pak", :last-verified "2026-07-25", :name-en "Tariq Bajwa", :unit "gov.pak.central-bank", :role-en "Chairperson", :official-url "http://www.sbp.org.pk/", :id "person.pak.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q5955848", :sourcing :authoritative, :unit-wikidata "Q932146", :role-property "chairperson", :provenance "wikidata", :jurisdiction "per", :last-verified "2026-07-25", :name-en "Julio Velarde", :unit "gov.per.central-bank", :role-en "Chairperson", :official-url "https://www.bcrp.gob.pe", :id "person.per.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q29870794", :sourcing :authoritative, :unit-wikidata "Q1853468", :role-property "chairperson", :provenance "wikidata", :jurisdiction "phl", :last-verified "2026-07-25", :name-en "Nestor Espenilla, Jr.", :unit "gov.phl.central-bank", :role-en "Chairperson", :official-url "https://www.bsp.gov.ph", :id "person.phl.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q134475148", :sourcing :authoritative, :unit-wikidata "Q3364697", :role-property "chairperson", :provenance "wikidata", :jurisdiction "png", :last-verified "2026-07-25", :name-en "Elizabeth Genia", :unit "gov.png.central-bank", :role-en "Chairperson", :official-url "http://www.bankpng.gov.pg/", :since "2023-12-20", :id "person.png.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q9139594", :sourcing :authoritative, :unit-wikidata "Q168844", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Adam Glapiński", :unit "gov.pol.central-bank", :role-en "Chairperson", :official-url "https://www.nbp.pl/", :id "person.pol.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q9139594", :sourcing :authoritative, :unit-wikidata "Q168844", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Adam Glapiński", :unit "gov.pol.central-bank", :role-en "Head of Government", :official-url "https://www.nbp.pl/", :since "2016-06-21", :id "person.pol.central-bank.head-of-government"}
+
+  #:gov.person{:wikidata "Q3021885", :sourcing :authoritative, :unit-wikidata "Q378372", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prt", :last-verified "2026-07-25", :name-en "Álvaro Santos Pereira", :unit "gov.prt.central-bank", :role-en "Chairperson", :name-native "Álvaro Miguel Rodrigues dos Santos Pereira", :official-url "https://www.bportugal.pt", :since "2025-01-01", :id "person.prt.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q255022", :sourcing :authoritative, :unit-wikidata "Q967861", :role-property "chairperson", :provenance "wikidata", :jurisdiction "rou", :last-verified "2026-07-25", :name-en "Mugur Isărescu", :unit "gov.rou.central-bank", :role-en "Chairperson", :official-url "http://www.bnr.ro/", :since "2000-12-28", :id "person.rou.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q27063755", :sourcing :authoritative, :unit-wikidata "Q4314980", :role-property "chairperson", :provenance "wikidata", :jurisdiction "rwa", :last-verified "2026-07-25", :name-en "John Rwangombwa", :unit "gov.rwa.central-bank", :role-en "Chairperson", :official-url "http://www.bnr.rw/", :id "person.rwa.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q983752", :sourcing :authoritative, :unit-wikidata "Q2661296", :role-property "chairperson", :provenance "wikidata", :jurisdiction "sgp", :last-verified "2026-07-25", :name-en "Tharman Shanmugaratnam", :unit "gov.sgp.central-bank", :role-en "Chairperson", :name-native "தர்மன் சண்முகரத்தினம்", :official-url "http://www.mas.gov.sg/", :id "person.sgp.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q11965321", :sourcing :authoritative, :unit-wikidata "Q1777295", :role-property "chairperson", :provenance "wikidata", :jurisdiction "slb", :last-verified "2026-07-25", :name-en "Denton Rarawa", :unit "gov.slb.central-bank", :role-en "Chairperson", :official-url "http://www.cbsi.com.sb/", :since "2008-08-01", :id "person.slb.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q552534", :sourcing :authoritative, :unit-wikidata "Q1481791", :role-property "chairperson", :provenance "wikidata", :jurisdiction "svk", :last-verified "2026-07-25", :name-en "Peter Kažimír", :unit "gov.svk.central-bank", :role-en "Chairperson", :official-url "https://nbs.sk/en/", :since "2019-01-01", :id "person.svk.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q63614880", :sourcing :authoritative, :unit-wikidata "Q26662", :role-property "chairperson", :provenance "wikidata", :jurisdiction "svn", :last-verified "2026-07-25", :name-en "Boštjan Vasle", :unit "gov.svn.central-bank", :role-en "Chairperson", :official-url "http://www.bsi.si/", :since "2019-01-09", :id "person.svn.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q6207027", :sourcing :authoritative, :unit-wikidata "Q564652", :role-property "chairperson", :provenance "wikidata", :jurisdiction "swe", :last-verified "2026-07-25", :name-en "Erik Thedéen", :unit "gov.swe.central-bank", :role-en "Chairperson", :official-url "https://riksbank.se", :since "2023-01-01", :id "person.swe.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q16161140", :sourcing :authoritative, :unit-wikidata "Q4504280", :role-property "chairperson", :provenance "wikidata", :jurisdiction "syc", :last-verified "2026-07-25", :name-en "Caroline Abel", :unit "gov.syc.central-bank", :role-en "Chairperson", :official-url "http://www.cbs.sc/", :since "2012-01-01", :id "person.syc.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q23783391", :sourcing :authoritative, :unit-wikidata "Q806706", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tha", :last-verified "2026-07-25", :name-en "Veerathai Santiprabhob", :unit "gov.tha.central-bank", :role-en "Chairperson", :name-native "วิรไท สันติประภพ", :official-url "http://www.bot.or.th", :id "person.tha.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q20753040", :sourcing :authoritative, :unit-wikidata "Q4504282", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tls", :last-verified "2026-07-25", :name-en "Hélder Lopes", :unit "gov.tls.central-bank", :role-en "Chairperson", :official-url "https://www.bancocentral.tl/en", :id "person.tls.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q2961945", :sourcing :authoritative, :unit-wikidata "Q600137", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tun", :last-verified "2026-07-25", :name-en "Chedly Ayari", :unit "gov.tun.central-bank", :role-en "Chairperson", :name-native "الشاذلي العياري", :official-url "http://www.bct.gov.tn/", :id "person.tun.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q116142373", :sourcing :authoritative, :unit-wikidata "Q2670842", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tza", :last-verified "2026-07-25", :name-en "Emmanuel Tutuba", :unit "gov.tza.central-bank", :role-en "Chairperson", :official-url "http://www.bot-tz.org/", :since "2023-01-01", :id "person.tza.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q2689364", :sourcing :authoritative, :unit-wikidata "Q1070388", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ukr", :last-verified "2026-07-25", :name-en "Andriy Pyshnyi", :unit "gov.ukr.central-bank", :role-en "Chairperson", :name-native "Андрій Григорович Пишний", :official-url "https://bank.gov.ua/", :since "2022-10-07", :id "person.ukr.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q10799622", :sourcing :authoritative, :unit-wikidata "Q2234553", :role-property "chairperson", :provenance "wikidata", :jurisdiction "vnm", :last-verified "2026-07-25", :name-en "Nguyễn Thị Hồng", :unit "gov.vnm.central-bank", :role-en "Chairperson", :official-url "https://www.sbv.gov.vn", :since "2020-11-12", :id "person.vnm.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q28718255", :sourcing :authoritative, :unit-wikidata "Q806694", :role-property "chairperson", :provenance "wikidata", :jurisdiction "zmb", :last-verified "2026-07-25", :name-en "Denny Kalyalya", :unit "gov.zmb.central-bank", :role-en "Chairperson", :official-url "http://www.boz.zm/", :since "2015-02-13", :id "person.zmb.central-bank.chairperson"}
+
+  #:gov.person{:wikidata "Q26935194", :sourcing :authoritative, :unit-wikidata "Q1025119", :role-property "chairperson", :provenance "wikidata", :jurisdiction "zwe", :last-verified "2026-07-25", :name-en "John Mangudya", :unit "gov.zwe.central-bank", :role-en "Chairperson", :official-url "https://www.rbz.co.zw/", :id "person.zwe.central-bank.chairperson"}]}

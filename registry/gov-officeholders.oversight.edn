@@ -1,0 +1,148 @@
+;; ooyake 公 — gov-officeholders.oversight.edn — 現職の公職者（公人）。自動生成、手編集しない。
+;; 生成: nbb scripts/fetch_officeholders.cljs oversight   (2026-07-25)
+;; 出典: Wikidata（P35 元首 / P6 政府首脳 / P488 議長 / P1037 長 / P169 CEO /
+;;       P1308 現職者）。P582(終了日) を持つ statement と deprecated rank は除外
+;;       済み＝取得時点の現職のみ。:gov.person/last-verified がその取得日。
+;; 主キー: 既存 registry の :gov.unit/wikidata。したがって :gov.person/unit は
+;;       常に実在の :gov.unit/id を指す（名寄せ不要）。入力: gov-units.oversight-anticorruption.edn, gov-units.oversight-audit.edn, gov-units.oversight-competition.edn, gov-units.oversight-dataprotection.edn, gov-units.oversight-electoral.edn, gov-units.oversight-financial-regulator.edn, gov-units.oversight-nhri.edn, gov-units.oversight-ombudsman.edn, gov-units.oversight-prosecutor.edn, gov-units.oversight-revenue.edn
+;;
+;; G6（2026-07-25 改訂）: 公職としての役職・氏名・在任開始・公式URL のみ。生年月日・
+;; 出生地・家族・私的連絡先・住所・政党はクエリに含めていない（捨てているのではなく
+;; 要求していない）。G10 civic-wayfinding-never-a-target-list は不変。
+;; G11 politically neutral: 記録するのは『誰がその職に就いているか』だけで、評価・
+;; ランキング・スコアは持たない。
+
+{:graph {:name "gov-atlas-v1" :visibility :public}
+
+ :people
+ [#:gov.person{:wikidata "Q111889902", :sourcing :authoritative, :unit-wikidata "Q7079728", :role-property "officeholder", :provenance "wikidata", :jurisdiction "arg", :last-verified "2026-07-25", :name-en "Verónica María Gómez", :unit "gov.arg.anticorruption", :role-en "Officeholder", :official-url "https://www.argentina.gob.ar/anticorrupcion", :since "2023-03-14", :id "person.arg.anticorruption.officeholder"}
+
+  #:gov.person{:wikidata "Q24464024", :sourcing :authoritative, :unit-wikidata "Q2135305", :role-property "director", :provenance "wikidata", :jurisdiction "aut", :last-verified "2026-07-25", :name-en "Margit Kraker", :unit "gov.aut.audit", :role-en "Director / Head", :official-url "http://www.rechnungshof.gv.at/", :since "2016-01-01", :id "person.aut.audit.director"}
+
+  #:gov.person{:wikidata "Q60322373", :sourcing :authoritative, :unit-wikidata "Q1172519", :role-property "director", :provenance "wikidata", :jurisdiction "aut", :last-verified "2026-07-25", :name-en "Andrea Jelinek", :unit "gov.aut.dataprotection", :role-en "Director / Head", :official-url "https://www.dsb.gv.at/", :since "2014-01-01", :id "person.aut.dataprotection.director"}
+
+  #:gov.person{:wikidata "Q138639768", :sourcing :authoritative, :unit-wikidata "Q3100043", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Hilde François", :unit "gov.bel.audit", :role-en "Chairperson", :official-url "https://www.ccrek.be/", :id "person.bel.audit.chairperson"}
+
+  #:gov.person{:wikidata "Q9376959", :sourcing :authoritative, :unit-wikidata "Q1377705", :role-property "director", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Wojciech Wiewiórowski", :unit "gov.bel.dataprotection", :role-en "Director / Head", :official-url "https://www.edps.europa.eu/", :since "2019-12-05", :id "person.bel.dataprotection.director"}
+
+  #:gov.person{:wikidata "Q2168546", :sourcing :authoritative, :unit-wikidata "Q2945990", :role-property "director", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Els Keytsman", :unit "gov.bel.nhri", :role-en "Director / Head", :official-url "https://www.unia.be/", :since "2016-02-01", :id "person.bel.nhri.director.1"}
+
+  #:gov.person{:wikidata "Q64831141", :sourcing :authoritative, :unit-wikidata "Q2945990", :role-property "director", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Patrick Charlier", :unit "gov.bel.nhri", :role-en "Director / Head", :official-url "https://www.unia.be/", :since "2016-02-01", :id "person.bel.nhri.director.2"}
+
+  #:gov.person{:wikidata "Q42412261", :sourcing :authoritative, :unit-wikidata "Q2928497", :role-property "director", :provenance "wikidata", :jurisdiction "bel", :last-verified "2026-07-25", :name-en "Frédéric Van Leeuw", :unit "gov.bel.prosecutor", :role-en "Director / Head", :official-url "https://www.om-mp.be/nl/uw-om/federaal-parket/contact", :id "person.bel.prosecutor.director"}
+
+  #:gov.person{:wikidata "Q136428681", :sourcing :authoritative, :unit-wikidata "Q55505721", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "bgr", :last-verified "2026-07-25", :name-en "Borislav Bozhinov", :unit "gov.bgr.dataprotection", :role-en "Head of Government", :official-url "https://www.cpdp.bg", :since "2025-05-12", :id "person.bgr.dataprotection.head-of-government"}
+
+  #:gov.person{:wikidata "Q136004911", :sourcing :authoritative, :unit-wikidata "Q12298881", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "bgr", :last-verified "2026-07-25", :name-en "Kamelia Neykova", :unit "gov.bgr.electoral", :role-en "Head of Government", :official-url "https://www.cik.bg/", :since "2021-05-07", :id "person.bgr.electoral.head-of-government"}
+
+  #:gov.person{:wikidata "Q138586608", :sourcing :authoritative, :unit-wikidata "Q12287903", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "bgr", :last-verified "2026-07-25", :name-en "Milena Krastanova", :unit "gov.bgr.revenue", :role-en "Head of Government", :official-url "http://www.nap.bg/", :since "2026-03-09", :id "person.bgr.revenue.head-of-government"}
+
+  #:gov.person{:wikidata "Q28016609", :sourcing :authoritative, :unit-wikidata "Q2576708", :role-property "chairperson", :provenance "wikidata", :jurisdiction "blr", :last-verified "2026-07-25", :name-en "Ihar Karpienka", :unit "gov.blr.electoral", :role-en "Chairperson", :name-native "Ігар Васільевіч Карпенка", :official-url "http://rec.gov.by", :id "person.blr.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q79358569", :sourcing :authoritative, :unit-wikidata "Q7205557", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bol", :last-verified "2026-07-25", :name-en "Salvador Romero", :unit "gov.bol.electoral", :role-en "Chairperson", :official-url "http://www.oep.org.bo/", :id "person.bol.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q10325421", :sourcing :authoritative, :unit-wikidata "Q10369254", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bra", :last-verified "2026-07-25", :name-en "Marcos Cintra", :unit "gov.bra.revenue", :role-en "Chairperson", :official-url "https://www.gov.br/receitafederal/pt-br", :id "person.bra.revenue.chairperson"}
+
+  #:gov.person{:wikidata "Q116013339", :sourcing :authoritative, :unit-wikidata "Q2565834", :role-property "chairperson", :provenance "wikidata", :jurisdiction "che", :last-verified "2026-07-25", :name-en "Laura Melusine Baudenbacher", :unit "gov.che.competition", :role-en "Chairperson", :official-url "https://www.weko.admin.ch/", :since "2023-01-01", :id "person.che.competition.chairperson"}
+
+  #:gov.person{:wikidata "Q124350489", :sourcing :authoritative, :unit-wikidata "Q681362", :role-property "chairperson", :provenance "wikidata", :jurisdiction "che", :last-verified "2026-07-25", :name-en "Stefan Walter", :unit "gov.che.finreg", :role-en "Chairperson", :official-url "http://www.finma.ch", :id "person.che.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q7488353", :sourcing :authoritative, :unit-wikidata "Q1073219", :role-property "chairperson", :provenance "wikidata", :jurisdiction "chn", :last-verified "2026-07-25", :name-en "Shang Fulin", :unit "gov.chn.finreg", :role-en "Chairperson", :official-url "http://www.cbrc.gov.cn/english/home/jsp/index.jsp", :since "2011-01-01", :id "person.chn.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q12044972", :sourcing :authoritative, :unit-wikidata "Q11089526", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cze", :last-verified "2026-07-25", :name-en "Petr Mlsna", :unit "gov.cze.competition", :role-en "Chairperson", :official-url "https://uohs.gov.cz/en/homepage.html", :since "2020-01-01", :id "person.cze.competition.chairperson"}
+
+  #:gov.person{:wikidata "Q12032924", :sourcing :authoritative, :unit-wikidata "Q12040609", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "cze", :last-verified "2026-07-25", :name-en "Lenka Bradáčová", :unit "gov.cze.prosecutor", :role-en "Head of Government", :official-url "http://www.nsz.cz/", :since "2025-04-01", :id "person.cze.prosecutor.head-of-government"}
+
+  #:gov.person{:wikidata "Q16219274", :sourcing :authoritative, :unit-wikidata "Q56033", :role-property "chairperson", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Kay Scheller", :unit "gov.deu.audit", :role-en "Chairperson", :official-url "https://www.bundesrechnungshof.de/", :id "person.deu.audit.chairperson"}
+
+  #:gov.person{:wikidata "Q16219274", :sourcing :authoritative, :unit-wikidata "Q56033", :role-property "director", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Kay Scheller", :unit "gov.deu.audit", :role-en "Director / Head", :official-url "https://www.bundesrechnungshof.de/", :since "2014-01-01", :id "person.deu.audit.director"}
+
+  #:gov.person{:wikidata "Q31831396", :sourcing :authoritative, :unit-wikidata "Q1005821", :role-property "officeholder", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Louisa Specht-Riemenschneider", :unit "gov.deu.dataprotection", :role-en "Officeholder", :official-url "http://www.bfdi.bund.de", :since "2024-09-03", :id "person.deu.dataprotection.officeholder"}
+
+  #:gov.person{:wikidata "Q106129462", :sourcing :authoritative, :unit-wikidata "Q314211", :role-property "chairperson", :provenance "wikidata", :jurisdiction "deu", :last-verified "2026-07-25", :name-en "Mark Branson", :unit "gov.deu.finreg", :role-en "Chairperson", :official-url "https://www.bafin.de/", :since "2021-08-01", :id "person.deu.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q137610627", :sourcing :authoritative, :unit-wikidata "Q11939266", :role-property "chief-executive", :provenance "wikidata", :jurisdiction "esp", :last-verified "2026-07-25", :name-en "Josep Tomàs Salàs", :unit "gov.esp.anticorruption", :role-en "Chief Executive", :official-url "http://www.antifrau.cat", :since "2025-12-01", :id "person.esp.anticorruption.chief-executive"}
+
+  #:gov.person{:wikidata "Q6099830", :sourcing :authoritative, :unit-wikidata "Q3092169", :role-property "chairperson", :provenance "wikidata", :jurisdiction "esp", :last-verified "2026-07-25", :name-en "Ramón María Álvarez de Miranda García", :unit "gov.esp.audit", :role-en "Chairperson", :official-url "http://www.tcu.es/tribunal-de-cuentas/es/", :id "person.esp.audit.chairperson"}
+
+  #:gov.person{:wikidata "Q103766134", :sourcing :authoritative, :unit-wikidata "Q4894522", :role-property "chairperson", :provenance "wikidata", :jurisdiction "esp", :last-verified "2026-07-25", :name-en "Carlos San Basilio Pardo", :unit "gov.esp.finreg", :role-en "Chairperson", :official-url "https://www.cnmv.es", :since "2024-01-01", :id "person.esp.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q2938800", :sourcing :authoritative, :unit-wikidata "Q1137614", :role-property "chairperson", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Carine Camby", :unit "gov.fra.audit", :role-en "Chairperson", :official-url "https://www.ccomptes.fr/", :since "2026-01-01", :id "person.fra.audit.chairperson"}
+
+  #:gov.person{:wikidata "Q33292004", :sourcing :authoritative, :unit-wikidata "Q1115586", :role-property "chairperson", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Marie-Laure Denis", :unit "gov.fra.dataprotection", :role-en "Chairperson", :official-url "https://www.cnil.fr/", :since "2019-02-02", :id "person.fra.dataprotection.chairperson"}
+
+  #:gov.person{:wikidata "Q33230801", :sourcing :authoritative, :unit-wikidata "Q788606", :role-property "chairperson", :provenance "wikidata", :jurisdiction "fra", :last-verified "2026-07-25", :name-en "Marie-Anne Barbat-Layani", :unit "gov.fra.finreg", :role-en "Chairperson", :official-url "https://www.amf-france.org/", :since "2022-10-26", :id "person.fra.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q1174122", :sourcing :authoritative, :unit-wikidata "Q18363996", :role-property "chairperson", :provenance "wikidata", :jurisdiction "gbr", :last-verified "2026-07-25", :name-en "David Currie, Baron Currie of Marylebone", :unit "gov.gbr.competition", :role-en "Chairperson", :official-url "https://gov.uk/cma", :id "person.gbr.competition.chairperson"}
+
+  #:gov.person{:wikidata "Q107157055", :sourcing :authoritative, :unit-wikidata "Q5354978", :role-property "chief-executive", :provenance "wikidata", :jurisdiction "gbr", :last-verified "2026-07-25", :name-en "Shaun McNally", :unit "gov.gbr.electoral", :role-en "Chief Executive", :official-url "https://www.electoralcommission.org.uk/", :since "2022-04-01", :id "person.gbr.electoral.chief-executive"}
+
+  #:gov.person{:wikidata "Q24701304", :sourcing :authoritative, :unit-wikidata "Q23913093", :role-property "director", :provenance "wikidata", :jurisdiction "hun", :last-verified "2026-07-25", :name-en "Attila Péterfalvi", :unit "gov.hun.dataprotection", :role-en "Director / Head", :official-url "http://www.naih.hu/", :since "2012-01-01", :id "person.hun.dataprotection.director"}
+
+  #:gov.person{:wikidata "Q16523083", :sourcing :authoritative, :unit-wikidata "Q16517044", :role-property "officeholder", :provenance "wikidata", :jurisdiction "hun", :last-verified "2026-07-25", :name-en "László Székely", :unit "gov.hun.ombudsman", :role-en "Officeholder", :official-url "http://www.ajbh.hu", :id "person.hun.ombudsman.officeholder"}
+
+  #:gov.person{:wikidata "Q12520108", :sourcing :authoritative, :unit-wikidata "Q3273955", :role-property "chairperson", :provenance "wikidata", :jurisdiction "idn", :last-verified "2026-07-25", :name-en "Taufiequrachman Ruki", :unit "gov.idn.anticorruption", :role-en "Chairperson", :official-url "https://www.kpk.go.id/en/", :id "person.idn.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q111973164", :sourcing :authoritative, :unit-wikidata "Q2615692", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ind", :last-verified "2026-07-25", :name-en "Madhabi Puri Buch", :unit "gov.ind.finreg", :role-en "Chairperson", :official-url "http://www.sebi.gov.in/", :since "2022-03-01", :id "person.ind.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q2903894", :sourcing :authoritative, :unit-wikidata "Q2356351", :role-property "chairperson", :provenance "wikidata", :jurisdiction "isr", :last-verified "2026-07-25", :name-en "Uzi Vogelman", :unit "gov.isr.electoral", :role-en "Chairperson", :name-native "עוזי פוגלמן", :official-url "https://www.bechirot.gov.il/", :since "2020-05-26", :id "person.isr.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q110184313", :sourcing :authoritative, :unit-wikidata "Q19621554", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ita", :last-verified "2026-07-25", :name-en "Giuseppe Busia", :unit "gov.ita.anticorruption", :role-en "Chairperson", :official-url "https://www.anticorruzione.it", :since "2020-01-01", :id "person.ita.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q3897151", :sourcing :authoritative, :unit-wikidata "Q2254049", :role-property "director", :provenance "wikidata", :jurisdiction "ita", :last-verified "2026-07-25", :name-en "Pasquale Stanzione", :unit "gov.ita.dataprotection", :role-en "Director / Head", :official-url "https://www.garanteprivacy.it/", :since "2020-07-29", :id "person.ita.dataprotection.director"}
+
+  #:gov.person{:wikidata "Q378897", :sourcing :authoritative, :unit-wikidata "Q1115638", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ita", :last-verified "2026-07-25", :name-en "Paolo Savona", :unit "gov.ita.finreg", :role-en "Chairperson", :official-url "http://www.consob.it/", :since "2019-03-20", :id "person.ita.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q4226249", :sourcing :authoritative, :unit-wikidata "Q19844106", :role-property "chairperson", :provenance "wikidata", :jurisdiction "kaz", :last-verified "2026-07-25", :name-en "Qairat Qojamjarov", :unit "gov.kaz.anticorruption", :role-en "Chairperson", :name-native "Қайрат Пернешұлы Қожамжаров", :official-url "http://www.anticorruption.gov.kz", :id "person.kaz.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q137690904", :sourcing :authoritative, :unit-wikidata "Q5061020", :role-property "chairperson", :provenance "wikidata", :jurisdiction "kgz", :last-verified "2026-07-25", :name-en "Aidana Jupuyeva", :unit "gov.kgz.electoral", :role-en "Chairperson", :name-native "Жупуева Айдана Садыковна", :official-url "https://shailoo.gov.kg/", :since "2025-02-11", :id "person.kgz.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q123528691", :sourcing :authoritative, :unit-wikidata "Q6972398", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lbr", :last-verified "2026-07-25", :name-en "Davidetta Browne Lansanah", :unit "gov.lbr.electoral", :role-en "Chairperson", :official-url "http://www.necliberia.org/", :since "2020-04-10", :id "person.lbr.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q116172774", :sourcing :authoritative, :unit-wikidata "Q8900", :role-property "director", :provenance "wikidata", :jurisdiction "lux", :last-verified "2026-07-25", :name-en "Tony Murphy", :unit "gov.lux.audit", :role-en "Director / Head", :official-url "https://www.eca.europa.eu/", :since "2022-10-01", :id "person.lux.audit.director"}
+
+  #:gov.person{:wikidata "Q16300608", :sourcing :authoritative, :unit-wikidata "Q5779137", :role-property "chairperson", :provenance "wikidata", :jurisdiction "mex", :last-verified "2026-07-25", :name-en "Jaime González Aguadé", :unit "gov.mex.finreg", :role-en "Chairperson", :official-url "http://www.cnbv.gob.mx/", :id "person.mex.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q19870899", :sourcing :authoritative, :unit-wikidata "Q111354094", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nga", :last-verified "2026-07-25", :name-en "Ayotunde Phillips", :unit "gov.nga.electoral", :role-en "Chairperson", :official-url "https://lasiec.gov.ng/", :id "person.nga.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q3356825", :sourcing :authoritative, :unit-wikidata "Q23878202", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nor", :last-verified "2026-07-25", :name-en "Trine Skei Grande", :unit "gov.nor.nhri", :role-en "Chairperson", :official-url "https://www.nhri.no/", :id "person.nor.nhri.chairperson"}
+
+  #:gov.person{:wikidata "Q133449806", :sourcing :authoritative, :unit-wikidata "Q23878202", :role-property "chief-executive", :provenance "wikidata", :jurisdiction "nor", :last-verified "2026-07-25", :name-en "Kai Spurkland", :unit "gov.nor.nhri", :role-en "Chief Executive", :official-url "https://www.nhri.no/", :since "2025-01-01", :id "person.nor.nhri.chief-executive"}
+
+  #:gov.person{:wikidata "Q107353907", :sourcing :authoritative, :unit-wikidata "Q3349666", :role-property "director", :provenance "wikidata", :jurisdiction "per", :last-verified "2026-07-25", :name-en "Piero Corvetto", :unit "gov.per.electoral", :role-en "Director / Head", :official-url "http://www.onpe.gob.pe/", :since "2020-08-31", :id "person.per.electoral.director"}
+
+  #:gov.person{:wikidata "Q24427695", :sourcing :authoritative, :unit-wikidata "Q144015", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Ernest Bejda", :unit "gov.pol.anticorruption", :role-en "Chairperson", :official-url "https://cba.gov.pl/", :since "2015-12-01", :id "person.pol.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q53629823", :sourcing :authoritative, :unit-wikidata "Q11815204", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Sylwester Marciniak", :unit "gov.pol.electoral", :role-en "Chairperson", :name-native "Sylwester Adam Marciniak", :official-url "http://pkw.gov.pl/", :since "2020-01-01", :id "person.pol.electoral.chairperson.1"}
+
+  #:gov.person{:wikidata "Q9345054", :sourcing :authoritative, :unit-wikidata "Q11815204", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Stefan Jaworski", :unit "gov.pol.electoral", :role-en "Chairperson", :official-url "http://pkw.gov.pl/", :id "person.pol.electoral.chairperson.2"}
+
+  #:gov.person{:wikidata "Q9376526", :sourcing :authoritative, :unit-wikidata "Q11815204", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Wojciech Hermeliński", :unit "gov.pol.electoral", :role-en "Chairperson", :official-url "http://pkw.gov.pl/", :id "person.pol.electoral.chairperson.3"}
+
+  #:gov.person{:wikidata "Q11715335", :sourcing :authoritative, :unit-wikidata "Q773485", :role-property "chairperson", :provenance "wikidata", :jurisdiction "pol", :last-verified "2026-07-25", :name-en "Jacek Jastrzębski", :unit "gov.pol.finreg", :role-en "Chairperson", :official-url "http://www.knf.gov.pl/", :id "person.pol.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q23905420", :sourcing :authoritative, :unit-wikidata "Q7232685", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prt", :last-verified "2026-07-25", :name-en "Carlos Tavares", :unit "gov.prt.finreg", :role-en "Chairperson", :official-url "http://www.cmvm.pt/", :id "person.prt.finreg.chairperson"}
+
+  #:gov.person{:wikidata "Q60999934", :sourcing :authoritative, :unit-wikidata "Q7257468", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prt", :last-verified "2026-07-25", :name-en "Lucília Gago", :unit "gov.prt.prosecutor", :role-en "Chairperson", :official-url "https://www.ministeriopublico.pt/", :id "person.prt.prosecutor.chairperson"}
+
+  #:gov.person{:wikidata "Q131309324", :sourcing :authoritative, :unit-wikidata "Q1967952", :role-property "director", :provenance "wikidata", :jurisdiction "rou", :last-verified "2026-07-25", :name-en "Marius Ionuț Voineag", :unit "gov.rou.anticorruption", :role-en "Director / Head", :official-url "http://www.pna.ro/", :since "2023-03-30", :id "person.rou.anticorruption.director"}
+
+  #:gov.person{:wikidata "Q440689", :sourcing :authoritative, :unit-wikidata "Q7362566", :role-property "officeholder", :provenance "wikidata", :jurisdiction "rou", :last-verified "2026-07-25", :name-en "Renate Weber", :unit "gov.rou.ombudsman", :role-en "Officeholder", :official-url "https://avp.ro/", :since "2019-06-01", :id "person.rou.ombudsman.officeholder"}
+
+  #:gov.person{:wikidata "Q4153077", :sourcing :authoritative, :unit-wikidata "Q2387440", :role-property "chairperson", :provenance "wikidata", :jurisdiction "rus", :last-verified "2026-07-25", :name-en "Alexander Gutsan", :unit "gov.rus.prosecutor", :role-en "Chairperson", :name-native "Александр Владимирович Гуцан", :official-url "https://epp.genproc.gov.ru/", :since "2025-09-24", :id "person.rus.prosecutor.chairperson"}
+
+  #:gov.person{:wikidata "Q33093239", :sourcing :authoritative, :unit-wikidata "Q33093248", :role-property "head-of-government", :provenance "wikidata", :jurisdiction "syc", :last-verified "2026-07-25", :name-en "May De Silva", :unit "gov.syc.anticorruption", :role-en "Head of Government", :official-url "https://www.accsey.com/", :id "person.syc.anticorruption.head-of-government"}
+
+  #:gov.person{:wikidata "Q13020617", :sourcing :authoritative, :unit-wikidata "Q13013388", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tha", :last-verified "2026-07-25", :name-en "Wacharaphon Prasanrachakit", :unit "gov.tha.anticorruption", :role-en "Chairperson", :name-native "วัชรพล ประสารราชกิจ", :official-url "https://www.nacc.go.th/", :since "2015-12-30", :id "person.tha.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q47489105", :sourcing :authoritative, :unit-wikidata "Q16697654", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ukr", :last-verified "2026-07-25", :name-en "Roman Truba", :unit "gov.ukr.anticorruption", :role-en "Chairperson", :official-url "http://www.dbr.gov.ua", :since "2017-11-22", :id "person.ukr.anticorruption.chairperson"}
+
+  #:gov.person{:wikidata "Q19402646", :sourcing :authoritative, :unit-wikidata "Q12164672", :role-property "officeholder", :provenance "wikidata", :jurisdiction "ukr", :last-verified "2026-07-25", :name-en "Dmytro Lubinets", :unit "gov.ukr.ombudsman", :role-en "Officeholder", :name-native "Дмитро Валерійович Лубінець", :official-url "http://www.ombudsman.gov.ua/", :since "2022-07-01", :id "person.ukr.ombudsman.officeholder"}
+
+  #:gov.person{:wikidata "Q71835138", :sourcing :authoritative, :unit-wikidata "Q20076220", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ukr", :last-verified "2026-07-25", :name-en "Denys Hutenko", :unit "gov.ukr.revenue", :role-en "Chairperson", :official-url "http://sfs.gov.ua/en/", :since "2019-07-23", :id "person.ukr.revenue.chairperson"}
+
+  #:gov.person{:wikidata "Q88329992", :sourcing :authoritative, :unit-wikidata "Q368804", :role-property "chief-executive", :provenance "wikidata", :jurisdiction "usa", :last-verified "2026-07-25", :name-en "Rodney Scott", :unit "gov.usa.revenue", :role-en "Chief Executive", :official-url "https://www.cbp.gov/", :id "person.usa.revenue.chief-executive"}
+
+  #:gov.person{:wikidata "Q38454394", :sourcing :authoritative, :unit-wikidata "Q2890246", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ven", :last-verified "2026-07-25", :name-en "Elvis Amoroso", :unit "gov.ven.electoral", :role-en "Chairperson", :official-url "http://www.cne.gob.ve", :since "2023-08-24", :id "person.ven.electoral.chairperson"}
+
+  #:gov.person{:wikidata "Q122143374", :sourcing :authoritative, :unit-wikidata "Q3043123", :role-property "officeholder", :provenance "wikidata", :jurisdiction "zaf", :last-verified "2026-07-25", :name-en "Kholeka Gcaleka", :unit "gov.zaf.ombudsman", :role-en "Officeholder", :official-url "https://www.pprotect.org/", :since "2023-11-01", :id "person.zaf.ombudsman.officeholder"}]}

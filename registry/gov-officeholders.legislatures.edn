@@ -1,0 +1,88 @@
+;; ooyake 公 — gov-officeholders.legislatures.edn — 現職の公職者（公人）。自動生成、手編集しない。
+;; 生成: nbb scripts/fetch_officeholders.cljs legislatures   (2026-07-25)
+;; 出典: Wikidata（P35 元首 / P6 政府首脳 / P488 議長 / P1037 長 / P169 CEO /
+;;       P1308 現職者）。P582(終了日) を持つ statement と deprecated rank は除外
+;;       済み＝取得時点の現職のみ。:gov.person/last-verified がその取得日。
+;; 主キー: 既存 registry の :gov.unit/wikidata。したがって :gov.person/unit は
+;;       常に実在の :gov.unit/id を指す（名寄せ不要）。入力: gov-units.world-legislatures.edn
+;;
+;; G6（2026-07-25 改訂）: 公職としての役職・氏名・在任開始・公式URL のみ。生年月日・
+;; 出生地・家族・私的連絡先・住所・政党はクエリに含めていない（捨てているのではなく
+;; 要求していない）。G10 civic-wayfinding-never-a-target-list は不変。
+;; G11 politically neutral: 記録するのは『誰がその職に就いているか』だけで、評価・
+;; ランキング・スコアは持たない。
+
+{:graph {:name "gov-atlas-v1" :visibility :public}
+
+ :people
+ [#:gov.person{:wikidata "Q13043483", :sourcing :authoritative, :unit-wikidata "Q1135960", :role-property "chairperson", :provenance "wikidata", :jurisdiction "alb", :last-verified "2026-07-25", :name-en "Niko Peleshi", :unit "gov.alb.legislature", :role-en "Chairperson", :official-url "https://parlament.al", :since "2025-09-12", :id "person.alb.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q1951896", :sourcing :authoritative, :unit-wikidata "Q5440456", :role-property "chairperson", :provenance "wikidata", :jurisdiction "are", :last-verified "2026-07-25", :name-en "Mohammed Bin Zayed Al Nahyan", :unit "gov.are.legislature", :role-en "Chairperson", :name-native "محمّد بن زايد آل نهيان", :official-url "https://uaecabinet.ae/en/federal-supreme-council", :since "2022-05-14", :id "person.are.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q20513503", :sourcing :authoritative, :unit-wikidata "Q1337463", :role-property "chairperson", :provenance "wikidata", :jurisdiction "arm", :last-verified "2026-07-25", :name-en "Alen Simonyan", :unit "gov.arm.legislature", :role-en "Chairperson", :name-native "Ալեն Ռոբերտի Սիմոնյան", :official-url "http://parliament.am", :since "2021-08-02", :id "person.arm.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q16373886", :sourcing :authoritative, :unit-wikidata "Q330600", :role-property "chairperson", :provenance "wikidata", :jurisdiction "aze", :last-verified "2026-07-25", :name-en "Sahiba Gafarova", :unit "gov.aze.legislature", :role-en "Chairperson", :name-native "Sahibə Əli qızı Qafarova", :official-url "https://meclis.gov.az", :since "2020-03-10", :id "person.aze.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q131314448", :sourcing :authoritative, :unit-wikidata "Q639704", :role-property "chairperson", :provenance "wikidata", :jurisdiction "bgr", :last-verified "2026-07-25", :name-en "Nataliya Kiselova", :unit "gov.bgr.legislature", :role-en "Chairperson", :official-url "https://www.parliament.bg", :since "2024-12-06", :id "person.bgr.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q197178", :sourcing :authoritative, :unit-wikidata "Q19211", :role-property "chairperson", :provenance "wikidata", :jurisdiction "chn", :last-verified "2026-07-25", :name-en "Zhang Dejiang", :unit "gov.chn.legislature", :role-en "Chairperson", :official-url "http://www.npc.gov.cn/", :id "person.chn.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q1369810", :sourcing :authoritative, :unit-wikidata "Q720753", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cub", :last-verified "2026-07-25", :name-en "Esteban Lazo Hernández", :unit "gov.cub.legislature", :role-en "Chairperson", :name-native "Juan Esteban Lazo Hernández", :official-url "http://www.parlamentocubano.gob.cu/", :id "person.cub.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q351655", :sourcing :authoritative, :unit-wikidata "Q1112381", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cyp", :last-verified "2026-07-25", :name-en "Adamos Adamou", :unit "gov.cyp.legislature", :role-en "Chairperson", :name-native "Αδάμος Αδάμου", :official-url "https://www.parliament.cy/", :since "2020-10-23", :id "person.cyp.legislature.chairperson.1"}
+
+  #:gov.person{:wikidata "Q47984268", :sourcing :authoritative, :unit-wikidata "Q1112381", :role-property "chairperson", :provenance "wikidata", :jurisdiction "cyp", :last-verified "2026-07-25", :name-en "Annita Demetriou", :unit "gov.cyp.legislature", :role-en "Chairperson", :name-native "Αννίτα Δημητρίου", :official-url "https://www.parliament.cy/", :since "2021-06-10", :id "person.cyp.legislature.chairperson.2"}
+
+  #:gov.person{:wikidata "Q4349014", :sourcing :authoritative, :unit-wikidata "Q643412", :role-property "chairperson", :provenance "wikidata", :jurisdiction "fin", :last-verified "2026-07-25", :name-en "Anu Vehviläinen", :unit "gov.fin.legislature", :role-en "Chairperson", :official-url "https://www.eduskunta.fi/", :since "2020-06-09", :id "person.fin.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q18421363", :sourcing :authoritative, :unit-wikidata "Q818711", :role-property "chairperson", :provenance "wikidata", :jurisdiction "idn", :last-verified "2026-07-25", :name-en "Ahmad Muzani", :unit "gov.idn.legislature", :role-en "Chairperson", :official-url "https://mpr.go.id/", :since "2024-10-03", :id "person.idn.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q542074", :sourcing :authoritative, :unit-wikidata "Q378605", :role-property "chairperson", :provenance "wikidata", :jurisdiction "irn", :last-verified "2026-07-25", :name-en "Mohammad-Bagher Ghalibaf", :unit "gov.irn.legislature", :role-en "Chairperson", :name-native "محمدباقر قالیباف", :official-url "https://rc.majlis.ir/", :since "2020-05-28", :id "person.irn.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q511882", :sourcing :authoritative, :unit-wikidata "Q131279", :role-property "chairperson", :provenance "wikidata", :jurisdiction "isl", :last-verified "2026-07-25", :name-en "Steingrímur J. Sigfússon", :unit "gov.isl.legislature", :role-en "Chairperson", :name-native "Steingrímur Jóhann Sigfússon", :official-url "https://althingi.is", :id "person.isl.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q21794010", :sourcing :authoritative, :unit-wikidata "Q133396", :role-property "chairperson", :provenance "wikidata", :jurisdiction "isr", :last-verified "2026-07-25", :name-en "Amir Ohana", :unit "gov.isr.legislature", :role-en "Chairperson", :name-native "אמיר אוחנה", :official-url "https://main.knesset.gov.il", :since "2022-12-29", :id "person.isr.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q12617041", :sourcing :authoritative, :unit-wikidata "Q494162", :role-property "chairperson", :provenance "wikidata", :jurisdiction "kor", :last-verified "2026-07-25", :name-en "Cho Jeong-sik", :unit "gov.kor.legislature", :role-en "Chairperson", :official-url "https://assembly.go.kr/", :since "2026-06-05", :id "person.kor.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q17485808", :sourcing :authoritative, :unit-wikidata "Q17443556", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lby", :last-verified "2026-07-25", :name-en "Aguila Saleh Issa", :unit "gov.lby.legislature", :role-en "Chairperson", :name-native "عقيلة صالح عيسى العبيدي", :official-url "https://parliament.ly", :since "2014-08-05", :id "person.lby.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q1477867", :sourcing :authoritative, :unit-wikidata "Q1149644", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lie", :last-verified "2026-07-25", :name-en "Albert Frick", :unit "gov.lie.legislature", :role-en "Chairperson", :official-url "https://www.landtag.li/", :since "2013-03-01", :id "person.lie.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q2978289", :sourcing :authoritative, :unit-wikidata "Q517449", :role-property "chairperson", :provenance "wikidata", :jurisdiction "lux", :last-verified "2026-07-25", :name-en "Claude Wiseler", :unit "gov.lux.legislature", :role-en "Chairperson", :official-url "https://www.chd.lu/", :since "2023-11-21", :id "person.lux.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q4762878", :sourcing :authoritative, :unit-wikidata "Q1817866", :role-property "chairperson", :provenance "wikidata", :jurisdiction "mlt", :last-verified "2026-07-25", :name-en "Angelo Farrugia", :unit "gov.mlt.legislature", :role-en "Chairperson", :official-url "https://www.parlament.mt/", :id "person.mlt.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q5273847", :sourcing :authoritative, :unit-wikidata "Q109016", :role-property "chairperson", :provenance "wikidata", :jurisdiction "nor", :last-verified "2026-07-25", :name-en "Masud Gharahkhani", :unit "gov.nor.legislature", :role-en "Chairperson", :official-url "https://stortinget.no", :since "2021-11-25", :id "person.nor.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q983315", :sourcing :authoritative, :unit-wikidata "Q1542985", :role-property "chairperson", :provenance "wikidata", :jurisdiction "phl", :last-verified "2026-07-25", :name-en "Tito Sotto", :unit "gov.phl.legislature", :role-en "Chairperson", :official-url "https://www.congress.gov.ph/", :id "person.phl.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q110456", :sourcing :authoritative, :unit-wikidata "Q714698", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prk", :last-verified "2026-07-25", :name-en "Kim Yong-nam", :unit "gov.prk.legislature", :role-en "Chairperson", :name-native "김영남", :id "person.prk.legislature.chairperson.1"}
+
+  #:gov.person{:wikidata "Q710692", :sourcing :authoritative, :unit-wikidata "Q714698", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prk", :last-verified "2026-07-25", :name-en "Choe Thae-bok", :unit "gov.prk.legislature", :role-en "Chairperson", :name-native "최태복", :id "person.prk.legislature.chairperson.2"}
+
+  #:gov.person{:wikidata "Q1555060", :sourcing :authoritative, :unit-wikidata "Q740564", :role-property "chairperson", :provenance "wikidata", :jurisdiction "prt", :last-verified "2026-07-25", :name-en "José Pedro Aguiar Branco", :unit "gov.prt.legislature", :role-en "Chairperson", :name-native "José Pedro Aguiar-Branco", :official-url "https://www.parlamento.pt/", :id "person.prt.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q16242594", :sourcing :authoritative, :unit-wikidata "Q818691", :role-property "chairperson", :provenance "wikidata", :jurisdiction "qat", :last-verified "2026-07-25", :name-en "Ahmad bin Abdullah Al Mahmoud", :unit "gov.qat.legislature", :role-en "Chairperson", :official-url "https://www.shura.qa/", :id "person.qat.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q21179379", :sourcing :authoritative, :unit-wikidata "Q1813360", :role-property "chairperson", :provenance "wikidata", :jurisdiction "rou", :last-verified "2026-07-25", :name-en "Daniel Suciu", :unit "gov.rou.legislature", :role-en "Chairperson", :official-url "http://www.parlament.ro/", :since "2024-09-02", :id "person.rou.legislature.chairperson.1"}
+
+  #:gov.person{:wikidata "Q28950289", :sourcing :authoritative, :unit-wikidata "Q1813360", :role-property "chairperson", :provenance "wikidata", :jurisdiction "rou", :last-verified "2026-07-25", :name-en "Nicolae Ciucă", :unit "gov.rou.legislature", :role-en "Chairperson", :official-url "http://www.parlament.ro/", :since "2023-06-13", :id "person.rou.legislature.chairperson.2"}
+
+  #:gov.person{:wikidata "Q5642345", :sourcing :authoritative, :unit-wikidata "Q1517231", :role-property "head-of-state", :provenance "wikidata", :jurisdiction "sgp", :last-verified "2026-07-25", :name-en "Halimah Yacob", :unit "gov.sgp.legislature", :role-en "Head of State", :name-native "Halimah Binti Yacob / حاليمه بنت يا", :official-url "https://www.parliament.gov.sg/", :since "2017-09-14", :id "person.sgp.legislature.head-of-state"}
+
+  #:gov.person{:wikidata "Q56849253", :sourcing :authoritative, :unit-wikidata "Q817979", :role-property "chairperson", :provenance "wikidata", :jurisdiction "smr", :last-verified "2026-07-25", :name-en "Luca Santolini", :unit "gov.smr.legislature", :role-en "Chairperson", :official-url "https://www.consigliograndeegenerale.sm/", :id "person.smr.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q52871178", :sourcing :authoritative, :unit-wikidata "Q920222", :role-property "chairperson", :provenance "wikidata", :jurisdiction "srb", :last-verified "2026-07-25", :name-en "Vladimir Orlić", :unit "gov.srb.legislature", :role-en "Chairperson", :name-native "Владимир Орлић", :official-url "http://www.parlament.gov.rs/", :id "person.srb.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q3431152", :sourcing :authoritative, :unit-wikidata "Q1139204", :role-property "chairperson", :provenance "wikidata", :jurisdiction "svk", :last-verified "2026-07-25", :name-en "Richard Raši", :unit "gov.svk.legislature", :role-en "Chairperson", :official-url "http://www.nrsr.sk", :since "2025-03-26", :id "person.svk.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q15792100", :sourcing :authoritative, :unit-wikidata "Q680806", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tls", :last-verified "2026-07-25", :name-en "Arão Noé de Jesus da Costa Amaral", :unit "gov.tls.legislature", :role-en "Chairperson", :official-url "https://www.parlamento.tl/", :since "2018-06-13", :id "person.tls.legislature.chairperson.1"}
+
+  #:gov.person{:wikidata "Q362813", :sourcing :authoritative, :unit-wikidata "Q680806", :role-property "chairperson", :provenance "wikidata", :jurisdiction "tls", :last-verified "2026-07-25", :name-en "Vicente Guterres", :unit "gov.tls.legislature", :role-en "Chairperson", :official-url "https://www.parlamento.tl/", :id "person.tls.legislature.chairperson.2"}
+
+  #:gov.person{:wikidata "Q20070130", :sourcing :authoritative, :unit-wikidata "Q176296", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ukr", :last-verified "2026-07-25", :name-en "Ruslan Stefanchuk", :unit "gov.ukr.legislature", :role-en "Chairperson", :name-native "Руслан Олексійович Стефанчук", :official-url "https://rada.gov.ua", :since "2021-10-08", :id "person.ukr.legislature.chairperson"}
+
+  #:gov.person{:wikidata "Q3295308", :sourcing :authoritative, :unit-wikidata "Q1585014", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ven", :last-verified "2026-07-25", :name-en "Jorge Rodríguez", :unit "gov.ven.legislature", :role-en "Chairperson", :official-url "https://asambleanacionalvenezuela.org", :since "2021-01-05", :id "person.ven.legislature.chairperson.1"}
+
+  #:gov.person{:wikidata "Q5807461", :sourcing :authoritative, :unit-wikidata "Q1585014", :role-property "chairperson", :provenance "wikidata", :jurisdiction "ven", :last-verified "2026-07-25", :name-en "Dinorah Figuera", :unit "gov.ven.legislature", :role-en "Chairperson", :official-url "https://asambleanacionalvenezuela.org", :since "2023-01-05", :id "person.ven.legislature.chairperson.2"}]}

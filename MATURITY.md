@@ -3,6 +3,42 @@
 Honest status per the gov-coverage maturity model (ADR-2605250680). Coverage gated
 by `:sourcing` (G5): only `:authoritative` rows count.
 
+## 2026-07-25 — 公人 (public office holders) admitted; G6 amended
+
+The atlas answered *which body* and *where* but never *who* — despite its own manifest
+calling it the read-side SSoT for the "who / where / how" of public administration. G6
+read "no personal data" and N7 "NOT a store of officials' personal data", which was
+broader than the invariant it was protecting: the thing that actually mattered was
+**private** data, not the public fact that a named person holds a named office.
+
+Owner instruction 2026-07-25 (「公人は記録して ok」/「charter からその personal と言う
+のが強すぎるので、charter も更新して ok」) → **G6 amended, N7 narrowed** (ADR-2607253000):
+
+- **New**: `registry/gov-officeholders.*.edn` — **718 current office holders across 461
+  units and 197 jurisdictions**, pulled from Wikidata on 2026-07-25 and keyed by the
+  atlas's own `:gov.unit/wikidata`, so `:gov.person/unit` always resolves to a real
+  `:gov.unit/id` (no name-matching step, no orphan rows). Heads of state / heads of
+  government / legislature chairs / constitutional-court presidents / central-bank
+  governors / foreign-finance-defence ministers / oversight-body heads.
+- **Still unrepresentable**: private/home contact, address, birth data, family,
+  finances, health, movements, schedule, religion, party. Those attributes are not
+  declared in `gov-officeholders.schema.edn` and not requested from any upstream query —
+  they cannot be present-but-empty. `scripts/verify_officeholders.cljs` fails the build
+  if an attribute matching any of them ever appears.
+- **G10 unchanged** (civic wayfinding, never a target-list) and binds every row: this
+  answers "who holds this office", never "where is this person". **G11 unchanged**: no
+  evaluation, ranking or score of a person — holding an office is a fact, not a verdict.
+- **Current-only, and dated**: statements carrying an end date (P582) and deprecated
+  ranks are excluded, and every row carries `:gov.person/last-verified`. Office holders
+  change; a row without that date would assert more than it knows. Live evidence that
+  this matters: the UK head-of-government row read `since 2026-07-20` — five days before
+  the pull, and after this agent's own training cutoff. The dated row was right and the
+  prior belief was stale, which is exactly the failure mode `last-verified` exists for.
+- Coverage is **honest, not complete**: 718 holders against 7,089 atlas units. Wikidata
+  carries current holders for heads of state/government densely and for court presidents
+  and ministry heads thinly. That is a coverage gap to fill, never a claim that those
+  offices are vacant.
+
 ## 2026-06-05 — cross-actor world-model reconcile (ooyake↔tsumugi)
 
 The atlas was a structural SSoT that *other* actors consumed, but nothing actually

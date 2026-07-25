@@ -50,8 +50,18 @@ It is **read-only** and it is **not the government**.
 - **Do not** write a unit/address/window/form/procedure without `provenance` +
   `last-verified` + `sourcing`; **never** count `:representative` rows as
   coverage; **never** invent a procedure without a cited `legal-basis` (G5).
-- **Do not** store any official's **personal/home contact** — public
-  switchboard / 窓口 role-contact only, data-minimized (G6).
+- **Do** record the **current public office holder** of a body already in the atlas —
+  name, office, term start, official URL, Wikidata QID — in
+  `registry/gov-officeholders.*.edn`, keyed to an existing `:gov.unit/id`
+  (G6 as amended 2026-07-25, ADR-2607253000).
+- **Do not** store any official's **private/home contact, private life, family,
+  finances or movements**, and do not record **non-public individuals** at all.
+  Public switchboard / 窓口 role-contact only, data-minimized (G6).
+  > G6 previously read "no personal data", which was broader than its own intent:
+  > it excluded the public *who* this atlas claims to answer, while the invariant
+  > that actually mattered was always about **private** data. G10 (civic wayfinding,
+  > **never a target-list**) is unchanged and binds every office-holder row — record
+  > that a person holds an office, never anything that helps locate or target them.
 - **Do not** file, submit, or mutate a government record — that is **toritsugi**
   (gated). **Do not** audit/adjudicate — that is **danjo**. ooyake only
   catalogs (G9).
