@@ -1268,11 +1268,17 @@
    :gov.unit/name-en "Maldives"
    :gov.unit/name-local "ދިވެހިރާއްޖެ"
    :gov.unit/name-romanized "Dhivehi Raajje"
-   :gov.unit/official-url "https://visitmaldives.com/"
+   ;; 2026-07-26: was https://visitmaldives.com/ — the tourism board's marketing site,
+   ;; not the government. Corrected to the President's Office, which this same registry
+   ;; already cites for gov.mdv.education. Found because kouhou's feed discovery
+   ;; faithfully followed this URL and registered a tourism feed as a government press
+   ;; source: a reachable-but-wrong official-url is worse than an unreachable one,
+   ;; because everything downstream inherits it confidently.
+   :gov.unit/official-url "https://presidency.gov.mv/"
    :gov.unit/wikidata "Q826"
    :gov.unit/external-code ["iso3166-1-alpha3:MDV"]
    :gov.unit/cofog ["01"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://visitmaldives.com/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://presidency.gov.mv/" :gov.unit/last-verified "2026-07-26"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.mhl"
