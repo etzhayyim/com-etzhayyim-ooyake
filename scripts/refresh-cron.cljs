@@ -85,6 +85,15 @@
   (when (pos? code)
     (fail! "verify_officeholders failed — the registry violates the linkage/G6/provenance gate and will not be committed" 1)))
 
+;; 3b. official-url の到達率を測ってログに残す（ADR-2607253400）。
+;;
+;; これは **ゲートではない**。到達しない政府サイトがあっても registry は書き換えないし
+;; ジョブも失敗させない — 403 や DNS 障害は「その省庁が存在しない」を意味しないし、
+;; こちらから届かないことと相手が公表していないことは別物だから。measurement を毎週
+;; ログに残して推移が見えるようにするのが目的で、feed 側にだけ再測定があってこちらに
+;; 無いという非対称を埋める。失敗しても後続に進む。
+(run! "nbb" ["scripts/verify_unit_urls.cljs"])
+
 ;; 4. 差分があれば着地させる
 (if (str/blank? (git-out ["status" "--porcelain" "--" "registry"]))
   (println "refresh-cron: no change — every office holder reads the same as last run")

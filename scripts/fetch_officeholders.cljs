@@ -98,10 +98,31 @@
 (defn- read-units [file]
   (:units (edn/read-string (str (.readFileSync fs (str "registry/" file) "utf8")))))
 
-(defn- existing-count [path]
-  (try
-    (count (:people (edn/read-string (str (.readFileSync fs path "utf8")))))
-    (catch :default _ 0)))
+(defn- existing-people [path]
+  (try (:people (edn/read-string (str (.readFileSync fs path "utf8")))) (catch :default _ [])))
+
+(defn- existing-count [path] (count (existing-people path)))
+
+(defn- carry-primary-confirmations
+  "既に当局側で確認済み（:authoritative + :source-url）だった行は、その確認を持ち越す。
+
+  週次 refetch は Wikidata を読み直すだけなので、そのままでは
+  verify-primary-sources.cljs が積み上げた1次確認を毎週消してしまう。持ち越す条件は
+  **同じ組織・同じ職・同じ人物**であること — 人が替わっていれば前任者に対する確認は
+  無効なので落とす（それが1次確認の意味）。"
+  [prev people]
+  (let [k (juxt :gov.person/unit :gov.person/role-property :gov.person/wikidata)
+        confirmed (into {} (for [p prev
+                                 :when (and (= :authoritative (:gov.person/sourcing p))
+                                            (:gov.person/source-url p))]
+                             [(k p) p]))]
+    (mapv (fn [p]
+            (if-let [c (get confirmed (k p))]
+              (assoc p :gov.person/sourcing :authoritative
+                       :gov.person/source-url (:gov.person/source-url c)
+                       :gov.person/source-checked (:gov.person/source-checked c))
+              p))
+          people)))
 
 (defn- sparql-positions
   "PASS B（ADR-2607253200）— 役職エンティティ経由で現職を引く。
@@ -201,7 +222,7 @@
                :gov.person/name-en label
                :gov.person/wikidata person-qid
                :gov.person/unit-wikidata unit-qid
-               :gov.person/sourcing :authoritative
+               :gov.person/sourcing :third-party
                :gov.person/provenance "wikidata"
                :gov.person/last-verified (today)}
         (and native (not= native label)) (assoc :gov.person/name-native native)
@@ -237,7 +258,7 @@
                :gov.person/name-en label
                :gov.person/wikidata person-qid
                :gov.person/unit-wikidata unit-qid
-               :gov.person/sourcing :authoritative
+               :gov.person/sourcing :third-party
                :gov.person/provenance "wikidata"
                :gov.person/last-verified (today)
                :gov.person/since (subs start 0 10)}
@@ -314,7 +335,11 @@
        ";; 主キー: 既存 registry の :gov.unit/wikidata。したがって :gov.person/unit は\n"
        ";;       常に実在の :gov.unit/id を指す（名寄せ不要）。入力: " (str/join ", " source-files) "\n"
        ";;\n"
-       ";; G6（2026-07-25 改訂）: 公職としての役職・氏名・在任開始・公式URL のみ。生年月日・\n"
+       ";; :gov.person/sourcing は :third-party（Wikidata 由来、当局未確認）で出す。当局自身の
+;; ページで確認できた行だけを scripts/verify-primary-sources.cljs が :authoritative へ
+;; 昇格させ、:gov.person/source-url にその引用を付ける（ADR-2607253400）。
+;;
+;; G6（2026-07-25 改訂）: 公職としての役職・氏名・在任開始・公式URL のみ。生年月日・\n"
        ";; 出生地・家族・私的連絡先・住所・政党はクエリに含めていない（捨てているのではなく\n"
        ";; 要求していない）。G10 civic-wayfinding-never-a-target-list は不変。\n"
        ";; G11 politically neutral: 記録するのは『誰がその職に就いているか』だけで、評価・\n"
@@ -354,8 +379,10 @@
                    (-> (run-pass "B(position)" sparql-positions ->person-from-position)
                        (.then (fn [[pass-b-raw err-b]]
                                 (let [pass-b (current-per-position pass-b-raw)
-                                      final (dedupe-ids (merge-passes pass-a pass-b))
-                                      path (str "registry/gov-officeholders." out ".edn")]
+                                      path (str "registry/gov-officeholders." out ".edn")
+                                      final (carry-primary-confirmations
+                                             (existing-people path)
+                                             (dedupe-ids (merge-passes pass-a pass-b)))]
                                   (println (str "[" out "] " (count final) " officeholders across "
                                                 (count (distinct (map :gov.person/unit final))) " units"
                                                 " (A " (count pass-a) " + B " (count pass-b)
