@@ -41,8 +41,11 @@
      :wikidata {:type "string", :description "the person's QID — the citation, so any row can be re-checked at source"},
      :sourcing
      {:type "string",
-      :enum ["authoritative" "representative"],
-      :description "G5 — `representative` rows are illustrative and never counted as coverage"},
+      :enum ["authoritative" "third-party" "representative"],
+      :description "G5 — where the CLAIM came from, not how much we trust it. `authoritative`: the office-holding was seen on the authority's own page (`sourceUrl` cites it). `third-party`: real, but taken from an aggregator (Wikidata) and NOT checked against the authority — this is the honest default for anything the atlas has not independently confirmed. `representative`: illustrative, never counted as coverage. `third-party` was added 2026-07-25 (ADR-2607253400) because every office-holder row was claiming `authoritative` while carrying `provenance: wikidata`, which asserted a primary check that had never happened."},
+     :sourceUrl
+     {:type "string",
+      :description "the authority's own page on which this person was found holding this office — present only on `authoritative` rows, and the thing that makes them authoritative. Absent means nobody has confirmed it against the government's own publication yet, which is a coverage gap rather than a doubt about the person."},
      :provenance {:type "string", :description "where this row came from, e.g. \"wikidata\""},
      :lastVerified
      {:type "string",
