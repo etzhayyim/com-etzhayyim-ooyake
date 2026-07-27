@@ -16,11 +16,11 @@
    :gov.unit/parent "gov.aus"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "aus"
-   :gov.unit/name-en "Australian National Audit Office (ANAO)"
-   :gov.unit/official-url "https://www.audit.vic.gov.au"
-   :gov.unit/wikidata "Q108248231"
+   :gov.unit/name-en "Australian National Audit Office"
+   :gov.unit/official-url "https://www.anao.gov.au/"
+   :gov.unit/wikidata "Q4824446"
    :gov.unit/cofog ["01.3"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.audit.vic.gov.au" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.anao.gov.au/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.aut.audit"
@@ -64,11 +64,12 @@
    :gov.unit/parent "gov.bra"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "bra"
-   :gov.unit/name-en "Rechnungshof der Gemeinden des Bundesstaates Bahia"
-   :gov.unit/official-url "http://www.tcm.ba.gov.br"
-   :gov.unit/wikidata "Q10384661"
+   :gov.unit/name-en "Federal Court of Accounts of Brazil"
+   :gov.unit/name-local "Tribunal de Contas da União"
+   :gov.unit/official-url "https://portal.tcu.gov.br/english"
+   :gov.unit/wikidata "Q7840473"
    :gov.unit/cofog ["01.3"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "http://www.tcm.ba.gov.br" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://portal.tcu.gov.br/english" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.deu.audit"
@@ -138,11 +139,11 @@
    :gov.unit/parent "gov.lux"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "lux"
-   :gov.unit/name-en "European Court of Auditors"
-   :gov.unit/official-url "https://www.eca.europa.eu/"
-   :gov.unit/wikidata "Q8900"
+   :gov.unit/name-en "Court of Audit of the Grand Duchy of Luxembourg"
+   :gov.unit/name-local "Cour des comptes du Grand-Duché de Luxembourg"
+   :gov.unit/official-url "https://cour-des-comptes.public.lu/"
    :gov.unit/cofog ["01.3"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.eca.europa.eu/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://cour-des-comptes.public.lu/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.mar.audit"

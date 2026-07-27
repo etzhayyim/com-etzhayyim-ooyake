@@ -77,10 +77,10 @@
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "esp"
    :gov.unit/name-en "Defensor del Pueblo"
-   :gov.unit/official-url "https://www.defensordelpuebloandaluz.es/"
+   :gov.unit/official-url "https://www.defensordelpueblo.es/en/"
    :gov.unit/wikidata "Q3043122"
    :gov.unit/cofog ["01.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.defensordelpuebloandaluz.es/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.defensordelpueblo.es/en/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.gbr.ombudsman"
@@ -89,10 +89,10 @@
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "gbr"
    :gov.unit/name-en "Parliamentary and Health Service Ombudsman"
-   :gov.unit/official-url "https://www.foi.scot/"
-   :gov.unit/wikidata "Q7437791"
+   :gov.unit/official-url "https://www.ombudsman.org.uk/"
+   :gov.unit/wikidata "Q7139048"
    :gov.unit/cofog ["01.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.foi.scot/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.ombudsman.org.uk/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.geo.ombudsman"
@@ -150,11 +150,11 @@
    :gov.unit/parent "gov.nor"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "nor"
-   :gov.unit/name-en "Norwegian Ombudsman for the Ageing"
-   :gov.unit/official-url "https://www.eldreombudet.no/"
-   :gov.unit/wikidata "Q88773557"
+   :gov.unit/name-en "Norwegian Parliamentary Ombud"
+   :gov.unit/name-local "Sivilombudet"
+   :gov.unit/official-url "https://www.sivilombudet.no/en/"
    :gov.unit/cofog ["01.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.eldreombudet.no/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.sivilombudet.no/en/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.pak.ombudsman"

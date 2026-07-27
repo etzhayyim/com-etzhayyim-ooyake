@@ -92,11 +92,11 @@
    :gov.unit/parent "gov.gbr"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "gbr"
-   :gov.unit/name-en "Islamic Human Rights Commission"
-   :gov.unit/official-url "http://www.ihrc.org/"
-   :gov.unit/wikidata "Q3155375"
+   :gov.unit/name-en "Equality and Human Rights Commission"
+   :gov.unit/official-url "https://www.equalityhumanrights.com/"
+   :gov.unit/wikidata "Q22001063"
    :gov.unit/cofog ["01.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "http://www.ihrc.org/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.equalityhumanrights.com/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.gtm.nhri"
@@ -331,11 +331,11 @@
    :gov.unit/parent "gov.usa"
    :gov.unit/level :agency :gov.unit/branch :independent
    :gov.unit/jurisdiction "usa"
-   :gov.unit/name-en "Inter-American Commission on Human Rights"
-   :gov.unit/official-url "https://www.oas.org/en/iachr/"
-   :gov.unit/wikidata "Q1589444"
+   :gov.unit/name-en "United States Commission on Civil Rights"
+   :gov.unit/official-url "https://www.usccr.gov/"
+   :gov.unit/wikidata "Q7889639"
    :gov.unit/cofog ["01.1"] :gov.unit/status :active :gov.unit/sourcing :authoritative
-   :gov.unit/provenance "https://www.oas.org/en/iachr/" :gov.unit/last-verified "2026-06-03"
+   :gov.unit/provenance "https://www.usccr.gov/" :gov.unit/last-verified "2026-07-01"
    :gov.unit/verification-status :maintainer-verified}
 
   {:gov.unit/id "gov.zaf.nhri"
