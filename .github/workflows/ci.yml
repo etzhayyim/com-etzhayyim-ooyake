@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: latest
+          bb: latest
+      # `bb test` is the entry point this repo defines (bb.edn). Note that
+      # ADR-2607173000 retires babashka as the workspace script host in favour
+      # of nbb, so this gate will need updating when the repo migrates -- it is
+      # pinned to the runner that exists today, not endorsing it.
+      - run: bb test
