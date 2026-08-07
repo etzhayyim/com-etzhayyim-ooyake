@@ -6,9 +6,40 @@
 
 ooyake is the kotoba-Datomic-native **structural atlas** of public administration:
 supranational → country → region → prefecture → municipality/ward → ministry (省)
-→ agency (庁) → bureau (局) → division (課) → section → **窓口**, each unit carrying
-its **住所 (address) · 窓口 (service window) · 書式 (form) · 手続き (procedure) ·
-BPMN (process model)**.
+→ agency (庁) → bureau (局) → division (課) → section → **窓口**.
+
+**What is actually in the atlas today** (measured 2026-08-07 — the entity
+counts, not the intent):
+
+| entity | count | reach |
+|---|---|---|
+| `:gov.unit` | **7,135** | ministry 1,642 · agency 1,050 · subdivision 3,580 · court 206 · country 193 · legislature 186 · cabinet 129 · supranational 99 |
+| `:gov.address` | **7,088** | essentially 1:1 with units |
+| `:gov.procedure` | **158** | across 51 owner units, **all `:unverified-seed`** |
+| `:gov.form` | **6** | 1 unit |
+| `:gov.window` | **4** | 2 units |
+| `:gov.bpmn` | **4** | 0 units linked |
+
+**This is an atlas of organizations and their addresses.** It is not yet an
+atlas of counters, forms, procedures or process models — those exist as
+*seeds*, three orders of magnitude behind the unit tier, and none of them
+are verified. Read the counts above before building on 手続き/窓口/書式/BPMN;
+an earlier version of this section listed them as if each unit carried them,
+which the data does not support.
+
+**Executable procedure semantics live elsewhere.** A `:gov.procedure` seed
+records who owns a procedure and what documents it needs; it carries **no
+deadline, no lapse effect and no formal-review items**, so it cannot answer
+"is this late, and what happens now". That layer is
+[`kotoba-lang/tetsuzuki`](https://github.com/kotoba-lang/tetsuzuki) (general
+administrative procedure) and [`senkyo`](https://github.com/kotoba-lang/senkyo)
+(elections); `tetsuzuki.ooyake` copies these seeds without upgrading them,
+and they deliberately fail its conformance check until a statutory basis is
+confirmed.
+
+**The municipal tier is not populated.** `subdivision` is ADM1
+(prefectures/states). Below it the atlas holds **1 prefecture-level and
+1 ward-level unit** — city/town/village and their 窓口 are not seeded.
 
 It is the single read-side SSoT that the other government-facing actors consume:
 
